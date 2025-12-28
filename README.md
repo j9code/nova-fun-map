@@ -1,4 +1,4 @@
-# Project: (nova-fun-map)
+# Project: NoVa Fun Map
 Mapping amusements, attractions, and family-friendly fun across Northern Virginia using OpenStreetMap data, Overpass API, and uMap.
 
 ## Overview
