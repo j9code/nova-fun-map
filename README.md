@@ -1,14 +1,15 @@
-# nova-fun-map
+# Project: (nova-fun-map)
 Mapping amusements, attractions, and family-friendly fun across Northern Virginia using OpenStreetMap data, Overpass API, and uMap.
 
 ## Overview
-**nova-fun-map** is a public, reproducible mapping project that identifies and visualizes amusement-related features in Northern Virginia.  
+This project demonstrates how to create and share an interactive uMap using OpenStreetMap data, with documented data sourcing, tagging decisions, and cartographic choices.  
 It brings together:
 - OpenStreetMap tagging
 - Overpass API queries
 - uMap layer configuration
 
-The goal is to create a clear, audience-friendly map that highlights where people can find arcades, mini-golf, carousels, animal scooters, and other amusements across NoVA.
+## Live Map
+http://u.osmfr.org/m/1330832/
 
 ## Data Sources
 - **OpenStreetMap (OSM)** — community-maintained geographic data  
@@ -45,6 +46,10 @@ See `docs/admin-areas.md` for details.
 ## How to Use This Repository
 - In progress.
 
+## Files
+- `/data/raw` – original queries
+- `/data/processed` – cleaned GeoJSON
+- `/methods` – step-by-step documentation
 
 ## License
 OSM‑derived data in this repository is © OpenStreetMap contributors and is available under the ODbL license.
