@@ -1,0 +1,312 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2025-12-30T20:52:45Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/45778116",
+        "addr:city": "Manassas",
+        "addr:housenumber": "8902",
+        "addr:postcode": "20110",
+        "addr:state": "VA",
+        "addr:street": "Mathis Avenue",
+        "leisure": "miniature_golf",
+        "name": "The Magic Putting Place",
+        "sport": "golf",
+        "website": "https://magicputtingplace.com/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.4621535,
+          38.7622359
+        ]
+      },
+      "id": "way/45778116"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/65489888",
+        "addr:city": "Sterling",
+        "addr:state": "VA",
+        "leisure": "miniature_golf",
+        "name": "Algonkian Mini Golf",
+        "operator": "Northern Virginia Regional Park Authority",
+        "website": "https://www.novaparks.com/parks/algonkian-regional-park/things-to-do/mini-golf",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.3890889,
+          39.0604422
+        ]
+      },
+      "id": "way/65489888"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/107701997",
+        "addr:city": "Burke",
+        "addr:state": "VA",
+        "leisure": "miniature_golf",
+        "name": "Burke Lake Mini Golf",
+        "website": "https://www.fairfaxcounty.gov/parks/burke-lake/minigolf",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.305926,
+          38.7622937
+        ]
+      },
+      "id": "way/107701997"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/131708572",
+        "addr:city": "Arlington",
+        "addr:housenumber": "6060",
+        "addr:postcode": "22205",
+        "addr:state": "VA",
+        "addr:street": "Wilson Boulevard",
+        "designation": "Upton Hill Regional Park",
+        "fee": "yes",
+        "leisure": "miniature_golf",
+        "name": "Upton Hill Miniature Golf Course",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.1443854,
+          38.8707454
+        ]
+      },
+      "id": "way/131708572"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/232410906",
+        "addr:city": "Alexandria",
+        "addr:state": "VA",
+        "leisure": "miniature_golf",
+        "name": "Cameron Run Mini Golf",
+        "website": "https://www.novaparks.com/parks/cameron-run-regional-park/things-to-do/mini-golf",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.1009533,
+          38.8045516
+        ]
+      },
+      "id": "way/232410906"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/261326420",
+        "addr:city": "Triangle",
+        "addr:housenumber": "4701",
+        "addr:postcode": "22172",
+        "addr:state": "VA",
+        "addr:street": "Locust Shade Drive",
+        "leisure": "miniature_golf",
+        "name": "Locust Shade Park Mini Golf",
+        "website": "https://www.visitpwc.com/listing/locust-shade-park-mini-golf-course/2089/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.3524846,
+          38.531506
+        ]
+      },
+      "id": "way/261326420"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/262298939",
+        "addr:city": "Falls Church",
+        "addr:housenumber": "7900",
+        "addr:postcode": "22042",
+        "addr:state": "VA",
+        "addr:street": "Route 29",
+        "leisure": "miniature_golf",
+        "name": "Jefferson District Park Miniature Golf",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.2156275,
+          38.8763037
+        ]
+      },
+      "id": "way/262298939"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/491795793",
+        "addr:city": "Springfield",
+        "addr:state": "VA",
+        "leisure": "miniature_golf",
+        "name": "Lake Accotink Lucky Duck Miniature Golf",
+        "website": "https://www.fairfaxcounty.gov/parks/Lake-Accotink/minigolf",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.2153798,
+          38.7943397
+        ]
+      },
+      "id": "way/491795793"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/782563713",
+        "addr:city": "Woodbrige",
+        "addr:state": "VA",
+        "leisure": "miniature_golf",
+        "name": "Lake Ridge Park Mini Golf",
+        "website": "https://www.visitpwc.com/listing/lake-ridge-park-mini-golf-course/2090/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.3213727,
+          38.6943426
+        ]
+      },
+      "id": "way/782563713"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1180086489",
+        "addr:city": "Tysons",
+        "addr:state": "VA",
+        "leisure": "miniature_golf",
+        "level": "9",
+        "location": "roof",
+        "name": "Perch Putt",
+        "website": "https://www.perchputt.com/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.2108966,
+          38.9261523
+        ]
+      },
+      "id": "way/1180086489"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1458401668",
+        "addr:city": "Sterling",
+        "addr:postcode": "20166",
+        "addr:state": "VA",
+        "addr:street": "Jesse Court",
+        "leisure": "miniature_golf",
+        "name": "Dulles Golf Center Mini Golf",
+        "website": "https://dullesgolf.com/blog/18-hole-miniature-golf-course/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.4286643,
+          39.0184366
+        ]
+      },
+      "id": "way/1458401668"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1462708123",
+        "addr:city": "Lorton",
+        "addr:housenumber": "6501",
+        "addr:postcode": "22079",
+        "addr:state": "VA",
+        "addr:street": "Pohick Bay Drive",
+        "leisure": "miniature_golf",
+        "name": "Treasure Island Mini Golf",
+        "website": "https://www.novaparks.com/parks/pohick-bay-regional-park",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.1709912,
+          38.672893
+        ]
+      },
+      "id": "way/1462708123"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13259584115",
+        "addr:city": "Bluemont",
+        "addr:state": "VA",
+        "leisure": "miniature_golf",
+        "name": "Great Country Farms Cow Pie Putt Putt",
+        "website": "https://greatcountryfarms.com/attractions/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.8249088,
+          39.0950386
+        ]
+      },
+      "id": "node/13259584115"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13370758987",
+        "addr:city": "Chantilly",
+        "addr:housenumber": "14130",
+        "addr:postcode": "20151",
+        "addr:state": "VA",
+        "addr:street": "Sullyfield Circle",
+        "addr:unit": "G",
+        "leisure": "miniature_golf",
+        "name": "Monster Mini Golf",
+        "sport": "10pin;laser_tag;miniature_golf",
+        "website": "https://monsterminigolf.com/locations/us/va/chantilly/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.4399595,
+          38.8945505
+        ]
+      },
+      "id": "node/13370758987"
+    }
+  ]
+}
