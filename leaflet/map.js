@@ -1,5 +1,5 @@
 // Load the local GeoJSON file. Overpass and uMap are very unstable Dec 30, 2025.
-fetch('data/minigolf.geojson')
+fetch('../data/minigolf.geojson')
   .then(r => r.json())
   .then(data => {
     L.geoJSON(data, {
