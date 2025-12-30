@@ -1,11 +1,24 @@
 // Create the map
 var map = L.map('map').setView([38.95, -77.35], 10);
+var baseMaps = {
+  "Light": L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    subdomains: 'abcd'
+  }),
+  "Dark": L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    subdomains: 'abcd'
+  }),
+  "Imagery": L.tileLayer(
+    'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      attribution: 'Tiles &copy; Esri'
+    }
+  )
+};
 
-// Add OpenStreetMap tiles
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  maxZoom: 19,
-  attribution: '&copy; OpenStreetMap contributors'
-}).addTo(map);
+baseMaps["Light"].addTo(map);
+L.control.layers(baseMaps, null, { collapsed: false }).addTo(map);
+
 
 // Define the Font Awesome golfer icon
 var golferIcon = L.divIcon({
