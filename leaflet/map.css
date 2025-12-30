@@ -1,1 +1,21 @@
+/* Page fills the screen */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: sans-serif;
+}
+
+/* Map height */
+#map {
+  width: 100%;
+  height: 600px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Optional: spacing for the title and description */
+h2, p {
+  margin-left: 10px;
+}
 
