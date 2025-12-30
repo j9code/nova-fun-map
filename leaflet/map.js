@@ -28,6 +28,27 @@ var golferIcon = L.divIcon({
   iconAnchor: [3, 8]
 });
 
+// Legend (bottom-right)
+var legend = L.control({ position: "bottomright" });
+
+legend.onAdd = function () {
+  var div = L.DomUtil.create("div", "legend");
+  div.innerHTML = `
+    <div class="legend-title">Legend</div>
+    <div class="legend-item">
+      <span class="legend-swatch">
+        <span class="legend-halo"></span>
+        <i class="fa-solid fa-golf-ball-tee legend-icon"></i>
+      </span>
+      <span>Mini golf</span>
+    </div>
+  `;
+  return div;
+};
+
+legend.addTo(map);
+
+
 // Dedicated layer for halos (keeps them behind markers and centered)
 var haloLayer = L.layerGroup().addTo(map);
 
