@@ -11,8 +11,8 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 var golferIcon = L.divIcon({
   className: 'golfer-icon',
   html: '<i class="fa-solid fa-golf-ball-tee"></i>',
-  iconSize: [30, 30],
-  iconAnchor: [15, 15]
+  iconSize: [18, 18],
+  iconAnchor: [9, 9]
 });
 
 // Dedicated layer for halos (keeps them behind markers and centered)
