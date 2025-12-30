@@ -12,7 +12,7 @@ var golferIcon = L.divIcon({
   className: 'golfer-icon',
   html: '<i class="fa-solid fa-golf-ball-tee"></i>',
   iconSize: [10, 10],
-  iconAnchor: [5, 5]
+  iconAnchor: [5, 3]
 });
 
 // Dedicated layer for halos (keeps them behind markers and centered)
@@ -34,7 +34,7 @@ fetch('data/minigolf.geojson')
           radius: 11,
           fillColor: "green",
           color: "green",
-          weight: 2,
+          weight: 1,
           fillOpacity: 1.0
         }).addTo(haloLayer);
 
