@@ -25,7 +25,7 @@ var golferIcon = L.divIcon({
   className: 'golfer-icon',
   html: '<i class="fa-solid fa-golf-ball-tee"></i>',
   iconSize: [8, 8],
-  iconAnchor: [4, 7]
+  iconAnchor: [3, 8]
 });
 
 // Dedicated layer for halos (keeps them behind markers and centered)
