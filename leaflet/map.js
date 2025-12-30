@@ -15,20 +15,21 @@ var golferIcon = L.divIcon({
   iconAnchor: [15, 15]
 });
 
-// Dedicated layer for halos (keeps them behind markers and perfectly centered)
+// Dedicated layer for halos (keeps them behind markers and centered)
 var haloLayer = L.layerGroup().addTo(map);
 
 // Load the GeoJSON file
 fetch('data/minigolf.geojson')
-  .then(r => r.json())
+  .then(r => {
+    if (!r.ok) throw new Error(`GeoJSON HTTP ${r.status} ${r.statusText}`);
+    return r.json();
+  })
   .then(data => {
-
-    console.log("Loaded GeoJSON:", data);
     console.log("Feature count:", data.features?.length);
 
     const markers = L.geoJSON(data, {
       pointToLayer: (feature, latlng) => {
-        // Add halo BEHIND marker (centered exactly on the point)
+        // Halo behind marker (centered exactly on the point)
         L.circleMarker(latlng, {
           radius: 10,
           fillColor: "green",
@@ -37,7 +38,7 @@ fetch('data/minigolf.geojson')
           fillOpacity: 0.3
         }).addTo(haloLayer);
 
-        // Return ONLY the icon marker (no layerGroup = no offset issues)
+        // Icon marker on top
         return L.marker(latlng, { icon: golferIcon });
       },
 
@@ -46,4 +47,25 @@ fetch('data/minigolf.geojson')
         const name = p.name || "Unnamed";
         const city = p["addr:city"] || "";
         const state = p["addr:state"] || "";
-        const website = p
+        const website = p.website || "";
+
+        const locationLine =
+          (city || state) ? `${city}${city && state ? ", " : ""}${state}<br>` : "";
+
+        const websiteLine =
+          website ? `<a href="${website}" target="_blank" rel="noopener">Website</a>` : "";
+
+        layer.bindPopup(
+          `<strong>${name}</strong><br>` +
+          locationLine +
+          websiteLine
+        );
+      }
+    }).addTo(map);
+
+    // Zoom to data (only if there are features)
+    if (markers.getLayers().length) {
+      map.fitBounds(markers.getBounds(), { padding: [20, 20] });
+    }
+  })
+  .catch(err => console.error("GeoJSON load error:", err));
