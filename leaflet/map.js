@@ -11,19 +11,32 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 fetch('data/minigolf.geojson')
   .then(r => r.json())
   .then(data => {
-    L.geoJSON(data, {
-      pointToLayer: (feature, latlng) => L.circleMarker(latlng, {
-        radius: 6,
-        fillColor: "purple",
-        color: "#000",
-        weight: 1,
-        fillOpacity: 0.7
-      }),
+
+    // 🔍 DIAGNOSTIC LINE — ADD THIS
+    console.log("Loaded GeoJSON:", data);
+    console.log("Feature count:", data.features?.length);
+
+    const layer = L.geoJSON(data, {
+      pointToLayer: (feature, latlng) =>
+        L.circleMarker(latlng, {
+          radius: 6,
+          fillColor: "purple",
+          color: "#000",
+          weight: 1,
+          fillOpacity: 0.7
+        }),
       onEachFeature: (feature, layer) => {
         if (feature.properties) {
-          layer.bindPopup(JSON.stringify(feature.properties, null, 2));
+          layer.bindPopup(
+            `<strong>${feature.properties.name || "Unnamed"}</strong>`
+          );
         }
       }
     }).addTo(map);
-  });
-;
+
+    // 🔍 SECOND DIAGNOSTIC
+    console.log("Layer bounds:", layer.getBounds());
+    map.fitBounds(layer.getBounds());
+  })
+  .catch(err => console.error("GeoJSON load error:", err));
+
