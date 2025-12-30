@@ -1,20 +1,16 @@
 # Project: NoVa Fun Map
-Mapping amusements, attractions, and family-friendly fun across Northern Virginia using OpenStreetMap data, Overpass API, and uMap.
+Mapping amusements, attractions, and family-friendly fun across Northern Virginia using OpenStreetMap data, Overpass API, and Leaflet.
 
 ## Overview
-This project demonstrates how to create and share an interactive uMap using OpenStreetMap data, with documented data sourcing, tagging decisions, and cartographic choices.  
+This project demonstrates how to create and share an interactive map using OpenStreetMap data, with documented data sourcing, tagging decisions, and cartographic choices.  
 It brings together:
 - OpenStreetMap tagging
 - Overpass API queries
-- uMap layer configuration
-
-## Live Map
-http://u.osmfr.org/m/1330832/
+- Layer configuration
 
 ## Data Sources
 - **OpenStreetMap (OSM)** — community-maintained geographic data  
 - **Overpass API** — used to extract amusement features by tag  
-- **uMap** — for interactive web mapping  
 
 ## Categories Mapped
 The project currently focuses on:
@@ -22,17 +18,19 @@ The project currently focuses on:
 - **Chains** (regional or national brands)
 - **Specialty amusements** (e.g., animal scooters, miniature railways, carousels)
 
-Each category has its own Overpass query and uMap layer.
+Each category has its own Overpass query and Leaflet layer.
 
 ## Administrative Boundaries
 The project uses **OpenStreetMap administrative areas** to define the Northern Virginia region, rather than a custom bounding box. This ensures the map aligns with officially recognized county and city boundaries and avoids accidental inclusion of DC or Maryland nodes, ways, or relations.
 
 The following OSM admin areas are used:
 
-- **Loudoun County**
-- **Fairfax County**
-- **Prince William County**
 - **Arlington County**
+- **Fairfax County**
+- **Fauquier County**
+- **Loudoun County**
+- **Prince William County**
+
 - **City of Alexandria**
 - **City of Fairfax**
 - **City of Falls Church**
@@ -41,7 +39,6 @@ The following OSM admin areas are used:
 
 These boundaries are referenced directly in the Overpass queries using their OSM relation IDs.  
 See `docs/admin-areas.md` for details.
-
 
 ## How to Use This Repository
 - In progress.
