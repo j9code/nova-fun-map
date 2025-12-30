@@ -1,4 +1,13 @@
-// Load the local GeoJSON file. Overpass and uMap are very unstable Dec 30, 2025.
+// Create the Leaflet map
+var map = L.map('map').setView([38.95, -77.35], 10);
+
+// Add the OpenStreetMap basemap
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19,
+  attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+
+// Load the local GeoJSON file
 fetch('../data/minigolf.geojson')
   .then(r => r.json())
   .then(data => {
@@ -17,3 +26,4 @@ fetch('../data/minigolf.geojson')
       }
     }).addTo(map);
   });
+;
