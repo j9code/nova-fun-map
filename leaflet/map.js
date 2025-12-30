@@ -15,6 +15,9 @@ var golferIcon = L.divIcon({
   iconAnchor: [15, 15]
 });
 
+// Dedicated layer for halos (keeps them behind markers and perfectly centered)
+var haloLayer = L.layerGroup().addTo(map);
+
 // Load the GeoJSON file
 fetch('data/minigolf.geojson')
   .then(r => r.json())
@@ -23,35 +26,24 @@ fetch('data/minigolf.geojson')
     console.log("Loaded GeoJSON:", data);
     console.log("Feature count:", data.features?.length);
 
-    const layer = L.geoJSON(data, {
+    const markers = L.geoJSON(data, {
       pointToLayer: (feature, latlng) => {
-        // Marker with golfer icon
-        const marker = L.marker(latlng, { icon: golferIcon });
-
-        // Optional halo behind the marker
-        const halo = L.circleMarker(latlng, {
+        // Add halo BEHIND marker (centered exactly on the point)
+        L.circleMarker(latlng, {
           radius: 10,
           fillColor: "green",
           color: "green",
           weight: 1,
           fillOpacity: 0.3
-        });
+        }).addTo(haloLayer);
 
-        // LayerGroup combines halo + marker
-        return L.layerGroup([halo, marker]);
+        // Return ONLY the icon marker (no layerGroup = no offset issues)
+        return L.marker(latlng, { icon: golferIcon });
       },
-      onEachFeature: (feature, layer) => {
-        if (feature.properties) {
-          layer.bindPopup(
-            `<strong>${feature.properties.name || "Unnamed"}</strong><br>` +
-            `${feature.properties.addr_city || ""}, ${feature.properties.addr_state || ""} <br>` +
-            `<a href="${feature.properties.website || "#"}" target="_blank">Website</a>`
-          );
-        }
-      }
-    }).addTo(map);
 
-    // Zoom map to fit all features
-    map.fitBounds(layer.getBounds());
-  })
-  .catch(err => console.error("GeoJSON load error:", err));
+      onEachFeature: (feature, layer) => {
+        const p = feature.properties || {};
+        const name = p.name || "Unnamed";
+        const city = p["addr:city"] || "";
+        const state = p["addr:state"] || "";
+        const website = p
