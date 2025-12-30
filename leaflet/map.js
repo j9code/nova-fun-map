@@ -31,8 +31,8 @@ fetch('data/minigolf.geojson')
         // Optional halo behind the marker
         const halo = L.circleMarker(latlng, {
           radius: 10,
-          fillColor: "purple",
-          color: "purple",
+          fillColor: "green",
+          color: "green",
           weight: 1,
           fillOpacity: 0.3
         });
