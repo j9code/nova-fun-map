@@ -14,12 +14,16 @@ html, body {
   box-sizing: border-box;
 }
 
+.golfer-icon {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
 .golfer-icon i {
   font-size: 26px;
+  line-height: 30px;
   color: green;
-  line-height: 1;     /* Reset to avoid vertical offset */
-  display: block;
-  text-align: center;
 }
 
 /* Optional: spacing for the title and description */
