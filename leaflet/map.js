@@ -17,22 +17,18 @@ fetch('data/minigolf.geojson')
     console.log("Feature count:", data.features?.length);
 
     const layer = L.geoJSON(data, {
-      pointToLayer: (feature, latlng) =>
-        L.circleMarker(latlng, {
-          radius: 6,
-          fillColor: "purple",
-          color: "#000",
-          weight: 1,
-          fillOpacity: 0.7
-        }),
-      onEachFeature: (feature, layer) => {
-        if (feature.properties) {
-          layer.bindPopup(
-            `<strong>${feature.properties.name || "Unnamed"}</strong>`
-          );
-        }
-      }
-    }).addTo(map);
+  pointToLayer: (feature, latlng) => {
+    const marker = L.marker(latlng, { icon: golferIcon });
+    const halo = L.circleMarker(latlng, {
+      radius: 10,
+      fillColor: "purple",
+      color: "purple",
+      weight: 1,
+      fillOpacity: 0.3
+    });
+    return L.layerGroup([halo, marker]);
+  }
+}).addTo(map);;
 
     // 🔍 SECOND DIAGNOSTIC
     console.log("Layer bounds:", layer.getBounds());
