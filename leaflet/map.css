@@ -46,4 +46,51 @@ body {
   color: green;
 }
 
+.legend {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font: 14px/1.2 system-ui, sans-serif;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.15);
+}
+
+.legend-title {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-swatch {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+}
+
+.legend-halo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border: 2px solid green;
+  border-radius: 50%;
+}
+
+.legend-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;   /* legend icon size */
+  color: green;
+}
 
