@@ -42,7 +42,7 @@ out center;
 function loadLiveData() {
   console.log("Refreshing Overpass data…");
 
-  var url = "https://overpass-api.de/api/interpreter?data=" + encodeURIComponent(overpassQuery);
+  var url = "https://overpass.kumi.systems/api/interpreter?data=" + encodeURIComponent(overpassQuery);
 
   fetch(url)
     .then(r => r.json())
