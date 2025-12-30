@@ -7,6 +7,14 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
 
+// Define Font Awesomeness icon 
+var golferIcon = L.divIcon({
+  className: 'golfer-icon',
+  html: '<i class="fa-solid fa-golf-ball-tee"></i>',
+  iconSize: [30, 30],
+  iconAnchor: [15, 15]
+});
+
 // Load the local GeoJSON file
 fetch('data/minigolf.geojson')
   .then(r => r.json())
