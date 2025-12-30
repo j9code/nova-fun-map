@@ -65,7 +65,7 @@ fetch('data/minigolf.geojson')
       pointToLayer: (feature, latlng) => {
         // Halo behind marker (centered exactly on the point)
         L.circleMarker(latlng, {
-          radius: 11,
+          radius: 10,
           fillColor: "green",
           color: "green",
           weight: 1,
@@ -78,7 +78,7 @@ fetch('data/minigolf.geojson')
           fillColor: "#ffffff",
           color: "#ffffff",
           weight: 1,
-          fillOpacity: 0.9
+          fillOpacity: 1.0
         }).addTo(haloLayer);
 
         // Icon marker on top
