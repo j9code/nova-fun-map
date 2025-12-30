@@ -16,7 +16,10 @@ html, body {
 
 .golfer-icon i {
   font-size: 26px;
-  color: purple;
+  color: green;
+  line-height: 1;     /* Reset to avoid vertical offset */
+  display: block;
+  text-align: center;
 }
 
 /* Optional: spacing for the title and description */
