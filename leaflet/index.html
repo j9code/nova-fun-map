@@ -1,1 +1,35 @@
-<!DOCTYPE html> <html> <head> <meta charset="utf-8"> <title>Leaflet map placeholder</title> </head> <body> <p>Leaflet map will go here.</p> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Live NoVa Fun Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+
+  <!-- Your map styling -->
+  <link rel="stylesheet" href="map.css" />
+</head>
+<body>
+
+  <h2>Live Overpass Map</h2>
+  <p>This map refreshes automatically from Overpass.</p>
+
+  <!-- Map container -->
+  <div id="map"></div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- osmtogeojson converter -->
+  <script src="https://unpkg.com/osmtogeojson@3.0.0/osmtogeojson.js"></script>
+
+  <!-- Your map logic -->
+  <script src="map.js"></script>
+
+</body>
+</html>
