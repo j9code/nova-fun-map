@@ -35,7 +35,7 @@ fetch('data/minigolf.geojson')
           fillColor: "green",
           color: "green",
           weight: 2,
-          fillOpacity: 0
+          fillOpacity: 1.0
         }).addTo(haloLayer);
 
         // Inner white fill
