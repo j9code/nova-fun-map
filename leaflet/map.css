@@ -14,6 +14,11 @@ html, body {
   box-sizing: border-box;
 }
 
+.golfer-icon i {
+  font-size: 26px;
+  color: purple;
+}
+
 /* Optional: spacing for the title and description */
 h2, p {
   margin-left: 10px;
