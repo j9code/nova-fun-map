@@ -15,19 +15,19 @@ html, body {
 }
 
 .golfer-icon {
-  width: 30px;
-  height: 30px;
+  width: 8px;
+  height: 8px;
   text-align: center;
 }
 
 .golfer-icon i {
-  font-size: 10px;
-  line-height: 12px;
+  font-size: 5px;
+  line-height: 8px;
   color: green;
 }
 
 /* Optional: spacing for the title and description */
 h2, p {
-  margin-left: 10px;
+  margin-left: 15px;
 }
 
