@@ -13,6 +13,10 @@ var baseMaps = {
     attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
     subdomains: 'abcd'
   }),
+  "Topo": L.tileLayer( 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    subdomains: 'abcd'
+  }),
   "Imagery": L.tileLayer(
     'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
       attribution: 'Tiles &copy; Esri'
@@ -20,7 +24,19 @@ var baseMaps = {
   )
 };
 
-baseMaps["Light"].addTo(map);
+// ---- Basemap control ----
+var baseMaps = {
+  "Light": cartoLight,
+  "Voyager": cartoVoyager,
+  "Dark": cartoDark,
+  "Imagery": esriImagery,
+  "Topo": openTopo
+};
+
+// Default basemap
+cartoLight.addTo(map);
+
+// Layer switcher
 L.control.layers(baseMaps, null, { collapsed: false }).addTo(map);
 
 
