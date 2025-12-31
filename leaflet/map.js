@@ -72,20 +72,20 @@ function sportHas(feature, val) {
 //    - onByDefault: start visible
 // -------------------------------
 var categories = [
-  { name: "Mini golf",          filter: f => f.properties?.leisure === "miniature_golf",   icon: makeFaIcon('poi-icon mini-golf',   '<i class="fa-solid fa-golf-ball-tee"></i>'), ring: "#3d7d6d", onByDefault: true },
-  { name: "Arcades",            filter: f => f.properties?.leisure === "amusement_arcade", icon: makeFaIcon('poi-icon arcade',      '<i class="fa-solid fa-gamepad"></i>'),       ring: "#3d7d6d" },
-  { name: "Trampoline parks",   filter: f => f.properties?.leisure === "trampoline_park",  icon: makeFaIcon('poi-icon trampoline',  '<i class="fa-solid fa-person-jumping"></i>'),ring: "#3d7d6d" },
-  { name: "Escape games",       filter: f => f.properties?.leisure === "escape_game",      icon: makeFaIcon('poi-icon escape',      '<i class="fa-solid fa-key"></i>'),           ring: "#3d7d6d" },
-  { name: "Bowling",            filter: f => f.properties?.leisure === "bowling_alley",    icon: makeFaIcon('poi-icon bowling',     '<i class="fa-solid fa-bowling-ball"></i>'),  ring: "#3d7d6d" },
-  { name: "Indoor play",        filter: f => f.properties?.leisure === "indoor_play",      icon: makeFaIcon('poi-icon indoor-play', '<i class="fa-solid fa-child"></i>'),          ring: "#3d7d6d" },
-  { name: "Water parks",        filter: f => f.properties?.leisure === "water_park",       icon: makeFaIcon('poi-icon water-park',  '<i class="fa-solid fa-water"></i>'),          ring: "#3d7d6d" },
-  { name: "Zoos",               filter: f => f.properties?.tourism === "zoo",              icon: makeFaIcon('poi-icon zoo',         '<i class="fa-solid fa-paw"></i>'),           ring: "#3d7d6d" },
+  { name: "Mini golf",          filter: f => f.properties?.leisure === "miniature_golf",   icon: makeFaIcon('poi-icon mini-golf',   '<i class="fa-solid fa-golf-ball-tee"></i>'), ring: "#2e7d32", onByDefault: true },
+  { name: "Arcades",            filter: f => f.properties?.leisure === "amusement_arcade", icon: makeFaIcon('poi-icon arcade',      '<i class="fa-solid fa-gamepad"></i>'),       ring: "#6a1b9a" },
+  { name: "Trampoline parks",   filter: f => f.properties?.leisure === "trampoline_park",  icon: makeFaIcon('poi-icon trampoline',  '<i class="fa-solid fa-person-jumping"></i>'),ring: "#0277bd" },
+  { name: "Escape games",       filter: f => f.properties?.leisure === "escape_game",      icon: makeFaIcon('poi-icon escape',      '<i class="fa-solid fa-key"></i>'),           ring: "#424242" },
+  { name: "Bowling",            filter: f => f.properties?.leisure === "bowling_alley",    icon: makeFaIcon('poi-icon bowling',     '<i class="fa-solid fa-bowling-ball"></i>'),  ring: "#039be5" },
+  { name: "Indoor play",        filter: f => f.properties?.leisure === "indoor_play",      icon: makeFaIcon('poi-icon indoor-play', '<i class="fa-solid fa-child"></i>'),          ring: "#00897b" },
+  { name: "Water parks",        filter: f => f.properties?.leisure === "water_park",       icon: makeFaIcon('poi-icon water-park',  '<i class="fa-solid fa-water"></i>'),          ring: "#039be5" },
+  { name: "Zoos",               filter: f => f.properties?.tourism === "zoo",              icon: makeFaIcon('poi-icon zoo',         '<i class="fa-solid fa-paw"></i>'),           ring: "#5d4037" },
   { name: "Carousels",          filter: f => f.properties?.attraction === "carousel",      icon: makeFaIcon('poi-icon carousel',    '<i class="fa-solid fa-rotate"></i>'),         ring: "#3d7d6d" },
   { name: "Trains",             filter: f => f.properties?.attraction === "train",         icon: makeFaIcon('poi-icon train',       '<i class="fa-solid fa-train"></i>'),          ring: "#3d7d6d" },
-  { name: "Animal scooters",    filter: f => f.properties?.attraction === "animal_scooter",icon: makeFaIcon('poi-icon scooter',     '<i class="fa-solid fa-person-snowboarding"></i>'), ring: "#3d7d6d" },
-  { name: "Climbing adventure", filter: f => sportHas(f, "climbing_adventure"),            icon: makeFaIcon('poi-icon climbing',    '<i class="fa-solid fa-mountain"></i>'),       ring: "#3d7d6d" },
-  { name: "Laser tag",          filter: f => sportHas(f, "laser_tag"),                     icon: makeFaIcon('poi-icon laser',       '<i class="fa-solid fa-bullseye"></i>'),       ring: "#3d7d6d" },
-  { name: "Karting",            filter: f => sportHas(f, "karting"),                       icon: makeFaIcon('poi-icon karting',     '<i class="fa-solid fa-flag-checkered"></i>'), ring: "#3d7d6d" }
+  { name: "Animal scooters",    filter: f => f.properties?.attraction === "animal_scooter",icon: makeFaIcon('poi-icon scooter',     '<i class="fa-solid fa-person-snowboarding"></i>'), ring: "#f9a825" },
+  { name: "Climbing adventure", filter: f => sportHas(f, "climbing_adventure"),            icon: makeFaIcon('poi-icon climbing',    '<i class="fa-solid fa-mountain"></i>'),       ring: "#455a64" },
+  { name: "Laser tag",          filter: f => sportHas(f, "laser_tag"),                     icon: makeFaIcon('poi-icon laser',       '<i class="fa-solid fa-bullseye"></i>'),       ring: "#e91e63" },
+  { name: "Karting",            filter: f => sportHas(f, "karting"),                       icon: makeFaIcon('poi-icon karting',     '<i class="fa-solid fa-flag-checkered"></i>'), ring: "#000000" }
 ];
 
 // -------------------------------
