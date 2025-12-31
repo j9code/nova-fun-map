@@ -107,6 +107,37 @@ body {
   flex: 0 0 22px;
 }
 
+.legend-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.legend-toggle {
+  border: 1px solid #bbb;
+  background: #fff;
+  border-radius: 8px;
+  padding: 4px 8px;
+  font: 12px/1 system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.legend-body.is-collapsed {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .legend {
+    width: min(260px, 88vw);
+    max-height: 40vh;
+    overflow-y: auto;
+    font-size: 13px;
+  }
+}
+
+
 /* Faint colored dot behind the legend icon (uses inline background from JS) */
 .legend-dot {
   position: absolute;
