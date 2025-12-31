@@ -38,14 +38,14 @@ body {
    Map icons (ALL soft gray)
    ============================== */
 .poi-icon {
-  width: 2px;
-  height: 2px;
+  width: 1px;
+  height: 1px;
   text-align: center;
 }
 
 .poi-icon i {
-  font-size: 2px;
-  line-height: 8px;
+  font-size: 1px;
+  line-height: 4px;
   color: #6f6f6f;   /* soft neutral gray */
 }
 
