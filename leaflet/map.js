@@ -51,8 +51,8 @@ function makeFaIcon(extraClass, faHtml) {
   return L.divIcon({
     className: extraClass,  // styled by CSS
     html: faHtml,
-    iconSize: [8, 8],
-    iconAnchor: [4, 8]
+    iconSize: [5, 5],
+    iconAnchor: [3, 2]
   });
 }
 
@@ -141,7 +141,7 @@ fetch('data/novafunmap_12.30.25.geojson')
         pointToLayer: (feature, latlng) => {
           // White halo with colored ring
           L.circleMarker(latlng, {
-            radius: 11,
+            radius: 8,
             fillColor: "#ffffff",
             fillOpacity: 1.0,
             color: cat.ring,
