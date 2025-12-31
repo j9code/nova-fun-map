@@ -11,11 +11,11 @@ body {
   padding: 12px 16px;
 }
 
-/* Header layout: title + data aligned */
+/* Header layout */
 .header {
   display: flex;
   flex-direction: column;
-  align-items: baseline;   /* aligns text nicely */
+  align-items: baseline;
   gap: 2px;
   padding-bottom: 6px;
 }
@@ -34,21 +34,24 @@ body {
   margin-top: 8px;
 }
 
-/* Golfer icon */
-.golfer-icon {
+/* ==============================
+   Map icons (ALL soft gray)
+   ============================== */
+.poi-icon {
   width: 8px;
   height: 8px;
   text-align: center;
 }
 
-/* ---------- All icons are black ---------- */
-
 .poi-icon i {
   font-size: 5px;
   line-height: 8px;
-  color: #111;
+  color: #6f6f6f;   /* soft neutral gray */
 }
 
+/* ==============================
+   Legend container
+   ============================== */
 .legend {
   background: rgba(255, 255, 255, 0.95);
   padding: 10px 12px;
@@ -56,8 +59,8 @@ body {
   border-radius: 8px;
   font: 14px/1.2 system-ui, sans-serif;
   box-shadow: 0 1px 6px rgba(0,0,0,0.15);
-  max-height: 350px;   /* allows multiple entries */
-  overflow-y: auto;    /* scroll if needed */
+  max-height: 350px;
+  overflow-y: auto;
 }
 
 .legend-title {
@@ -78,44 +81,7 @@ body {
   flex: 0 0 22px;
 }
 
-.legend-halo {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 18px;
-  height: 18px;
-  transform: translate(-50%, -50%);
-  background: #fff;
-  border: 2px solid green;
-  border-radius: 50%;
-}
-
-.legend-icon {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 12px;   /* legend icon size */
-  color: #111;
-}
-
-/* ---------- Legend icon rendering ---------- */
-
-.legend-glyph {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  line-height: 1;
-}
-
-/* Make Font Awesome icons visible in legend */
-.legend-glyph i {
-  font-size: 12px;     /* legend icon size */
-  color: #111;     /* visible on white */
-}
-
-/* Keep halo visible behind legend icon */
+/* Halo behind legend icon */
 .legend-halo {
   position: absolute;
   left: 50%;
@@ -124,7 +90,22 @@ body {
   height: 18px;
   transform: translate(-50%, -50%);
   background: #ffffff;
-  border: 2px solid;
+  border: 2px solid;   /* color set inline from JS */
   border-radius: 50%;
 }
 
+/* ==============================
+   Legend icon rendering
+   ============================== */
+.legend-glyph {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1;
+}
+
+.legend-glyph i {
+  font-size: 12px;
+  color: #6f6f6f;   /* SAME soft gray as map icons */
+}
