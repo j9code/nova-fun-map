@@ -46,6 +46,17 @@ body {
   line-height: 8px;
   color: #000000;
 }
+.poi-icon {
+  width: 8px;
+  height: 8px;
+  text-align: center;
+}
+.poi-icon i {
+  font-size: 5px;
+  line-height: 8px;
+  color: #000;
+}
+
 
 .legend {
   background: rgba(255, 255, 255, 0.95);
