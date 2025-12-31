@@ -29,7 +29,7 @@ var golferIcon = L.divIcon({
   className: 'golfer-icon',
   html: '<i class="fa-solid fa-golf-ball-tee"></i>',
   iconSize: [8, 8],
-  iconAnchor: [6, 8]
+  iconAnchor: [5, 8]
 });
 
 // Legend (bottom-right)
