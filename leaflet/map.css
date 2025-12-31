@@ -164,3 +164,32 @@ body {
   color: #111;
 }
 
+/* ---------- Legend icon rendering ---------- */
+
+.legend-glyph {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1;
+}
+
+/* Make Font Awesome icons visible in legend */
+.legend-glyph i {
+  font-size: 12px;     /* legend icon size */
+  color: #111;     /* visible on white */
+}
+
+/* Keep halo visible behind legend icon */
+.legend-halo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  border: 2px solid;
+  border-radius: 50%;
+}
+
