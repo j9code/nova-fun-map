@@ -9,6 +9,10 @@ var baseMaps = {
     attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
     subdomains: 'abcd'
   }),
+  "Voyager": L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    subdomains: 'abcd'
+  }),
   "Imagery": L.tileLayer(
     'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
       attribution: 'Tiles &copy; Esri'
