@@ -121,6 +121,8 @@ body {
   border-radius: 8px;
   font: 14px/1.2 system-ui, sans-serif;
   box-shadow: 0 1px 6px rgba(0,0,0,0.15);
+  max-height: 260px;   /* allows multiple entries */
+  overflow-y: auto;    /* scroll if needed */
 }
 
 .legend-title {
