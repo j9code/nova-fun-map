@@ -37,15 +37,6 @@ var cartoDark = L.tileLayer(
   }
 );
 
-// OpenTopoMap
-var openTopo = L.tileLayer(
-  'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
-  {
-    attribution:
-      '&copy; OpenStreetMap contributors &copy; OpenTopoMap (CC-BY-SA)',
-    maxZoom: 17
-  }
-);
 
 // Esri World Imagery
 var esriImagery = L.tileLayer(
@@ -61,9 +52,8 @@ var baseMaps = {
   "Light": cartoLight,
   "Voyager": cartoVoyager,
   "Dark": cartoDark,
-  "Imagery": esriImagery,
-  "Topo": openTopo
-};
+  "Imagery": esriImagery
+  };
 
 // Add default basemap
 cartoLight.addTo(map);
@@ -78,7 +68,7 @@ var golferIcon = L.divIcon({
   className: 'golfer-icon',
   html: '<i class="fa-solid fa-golf-ball-tee"></i>',
   iconSize: [8, 8],
-  iconAnchor: [4, 7]   // visually centered for tiny FA glyph
+  iconAnchor: [3, 8]   // visually centered for tiny FA glyph
 });
 
 // ================================
