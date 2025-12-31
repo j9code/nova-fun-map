@@ -91,7 +91,7 @@ var categories = [
 // -------------------------------
 // 5) Legend (auto-built from categories)
 // -------------------------------
-var legend = L.control({ position: "bottomright" });
+var legend = L.control({ position: "topleft" });
 
 legend.onAdd = function () {
   var div = L.DomUtil.create("div", "legend");
