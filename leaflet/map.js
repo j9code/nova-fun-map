@@ -74,7 +74,7 @@ function sportHas(feature, val) {
 var categories = [
   { name: "Mini golf",          filter: f => f.properties?.leisure === "miniature_golf",   icon: makeFaIcon('poi-icon mini-golf',   '<i class="fa-solid fa-golf-ball-tee"></i>'), ring: "#2e7d32", onByDefault: true },
   { name: "Arcades",            filter: f => f.properties?.leisure === "amusement_arcade", icon: makeFaIcon('poi-icon arcade',      '<i class="fa-solid fa-gamepad"></i>'),       ring: "#6a1b9a" },
-  { name: "Trampoline parks",   filter: f => f.properties?.leisure === "trampoline_park",  icon: makeFaIcon('poi-icon trampoline',  '<i class="fa-solid fa-person-jumping"></i>'),ring: "#0277bd" },
+  { name: "Trampoline parks",   filter: f => f.properties?.leisure === "trampoline_park",  icon: makeFaIcon('poi-icon trampoline',  '<i class="fa-solid fa-person-falling-burst"></i>'),ring: "#0277bd" },
   { name: "Escape games",       filter: f => f.properties?.leisure === "escape_game",      icon: makeFaIcon('poi-icon escape',      '<i class="fa-solid fa-key"></i>'),           ring: "#424242" },
   { name: "Bowling",            filter: f => f.properties?.leisure === "bowling_alley",    icon: makeFaIcon('poi-icon bowling',     '<i class="fa-solid fa-bowling-ball"></i>'),  ring: "#039be5" },
   { name: "Indoor play",        filter: f => f.properties?.leisure === "indoor_play",      icon: makeFaIcon('poi-icon indoor-play', '<i class="fa-solid fa-child"></i>'),          ring: "#00897b" },
