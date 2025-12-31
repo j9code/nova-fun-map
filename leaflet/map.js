@@ -51,8 +51,8 @@ function makeFaIcon(extraClass, faHtml) {
   return L.divIcon({
     className: extraClass,  // styled by CSS
     html: faHtml,
-    iconSize: [5, 5],
-    iconAnchor: [3, 2]
+    iconSize: [1, 1],
+    iconAnchor: [3, 4]
   });
 }
 
