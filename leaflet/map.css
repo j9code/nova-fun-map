@@ -34,6 +34,16 @@ body {
   margin-top: 8px;
 }
 
+/* Mobile: map takes most of the viewport */
+@media (max-width: 768px) {
+  #map {
+    height: calc(100vh - 120px); /* header space */
+    margin-top: 6px;
+    border: 0;
+  }
+}
+
+
 /* ==============================
    Map icons (category-colored)
    ============================== */
