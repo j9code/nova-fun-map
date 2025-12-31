@@ -114,7 +114,7 @@ var overlays = {};
 var overlayGroups = {}; // category name -> L.layerGroup([halo, points])
 var layersControl = null;
 
-fetch('data/novafunmap_12.30.25.geojson?v=123025')
+fetch('data/novafunmap_12.30.25.geojson')
   .then(r => {
     if (!r.ok) throw new Error(`GeoJSON HTTP ${r.status}`);
     return r.json();
