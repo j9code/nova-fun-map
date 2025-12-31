@@ -1,7 +1,9 @@
 // ================================
+// NoVa Fun Map — map.js (icons only)
 // - Loads ONE GeoJSON file: data/novafunmap_12.30.25.geojson
 // - Builds multiple toggle layers from tags
 // - Auto-builds a legend from the same category list
+// - NO halos (icons only)
 // ================================
 
 // -------------------------------
@@ -51,8 +53,8 @@ function makeFaIcon(extraClass, faHtml) {
   return L.divIcon({
     className: extraClass,  // CSS controls color/size
     html: faHtml,
-    iconSize: [5, 5],
-    iconAnchor: [2, 2]      // preferred anchor
+    iconSize: [8, 8],
+    iconAnchor: [5, 8]      // your preferred anchor
   });
 }
 
@@ -63,7 +65,8 @@ function sportHas(feature, val) {
 }
 
 // -------------------------------
-// Category list from overpass
+// 4) Category list (single source of truth)
+//    NOTE: ring kept only for legend color if you want it; not used on map now
 // -------------------------------
 var categories = [
   { name: "Mini Golf",          filter: f => f.properties?.leisure === "miniature_golf",    icon: makeFaIcon('poi-icon mini-golf',   '<i class="fa-solid fa-golf-ball-tee"></i>'),  color: "#2e7d32", onByDefault: true },
