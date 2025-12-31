@@ -52,7 +52,7 @@ function makeFaIcon(extraClass, faHtml) {
     className: extraClass,  // styled by CSS
     html: faHtml,
     iconSize: [8, 8],
-    iconAnchor: [5, 8]
+    iconAnchor: [4, 8]
   });
 }
 
