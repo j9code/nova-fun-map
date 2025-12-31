@@ -57,6 +57,62 @@ body {
   color: #111;
 }
 
+/* Category-specific colors */
+.poi-icon.mini-golf i {
+  color: #2e7d32; /* green */
+}
+
+.poi-icon.arcade i {
+  color: #6a1b9a; /* purple */
+}
+
+.poi-icon.trampoline i {
+  color: #0277bd; /* blue */
+}
+
+.poi-icon.escape i {
+  color: #424242; /* dark gray */
+}
+
+.poi-icon.bowling i {
+  color: #d84315; /* orange */
+}
+
+.poi-icon.indoor-play i {
+  color: #00897b; /* teal */
+}
+
+.poi-icon.water-park i {
+  color: #039be5; /* light blue */
+}
+
+.poi-icon.zoo i {
+  color: #5d4037; /* brown */
+}
+
+.poi-icon.carousel i {
+  color: #c62828; /* red */
+}
+
+.poi-icon.train i {
+  color: #37474f; /* steel */
+}
+
+.poi-icon.scooter i {
+  color: #f9a825; /* yellow */
+}
+
+.poi-icon.climbing i {
+  color: #455a64; /* slate */
+}
+
+.poi-icon.laser i {
+  color: #e91e63; /* magenta */
+}
+
+.poi-icon.karting i {
+  color: #000000; /* black */
+}
 
 .legend {
   background: rgba(255, 255, 255, 0.95);
