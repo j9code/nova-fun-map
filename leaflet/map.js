@@ -59,12 +59,13 @@ cartoLight.addTo(map);
 // -------------------------------
 function makeFaIcon(extraClass, faHtml) {
   return L.divIcon({
-    className: extraClass,
+    className: `poi-marker ${extraClass}`, // add poi-marker
     html: faHtml,
-    iconSize: [12, 12],
-    iconAnchor: [6, 6]
+    iconSize: [18, 18],     // matches as legend-swatch
+    iconAnchor: [9, 9]
   });
 }
+
 
 function sportHas(feature, val) {
   const s = (feature.properties && feature.properties.sport) || "";
