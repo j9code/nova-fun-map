@@ -1,11 +1,10 @@
 // ================================
-// PlayNoVA — map.js (icons + subtle filled halo like legend, mobile-friendly legend)
+// PlayNoVA — map.js (icons + subtle filled halo via CSS, mobile-friendly legend)
 // - Loads ONE GeoJSON file: data/novafunmap_12.31.25.geojson
 // - Builds multiple toggle layers from tags
 // - Auto-builds a legend from the same category list
 // - Starts with NO categories selected
 // - Legend: Show/Hide works (collapsed by default on mobile)
-// - Map icons: subtle filled halo (no border) via CSS using .poi-marker::before
 // ================================
 
 // -------------------------------
@@ -39,17 +38,10 @@ var cartoDark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/
   maxZoom: 20
 });
 
-// (Optional) Esri Imagery — keep commented if you don't want it
-// var esriImagery = L.tileLayer(
-//   'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-//   { attribution: 'Tiles &copy; Esri', maxZoom: 19 }
-// );
-
 var baseMaps = {
   "Light": cartoLight,
   "Voyager": cartoVoyager,
   "Dark": cartoDark
-  // "Imagery": esriImagery
 };
 
 // Default basemap
@@ -59,11 +51,11 @@ cartoLight.addTo(map);
 // 3) Helpers for icons + sport parsing
 // -------------------------------
 function makeFaIcon(extraClass, faHtml) {
-  // poi-marker is MAP-ONLY; legend strips it out so legend stays unchanged
+  // poi-marker is MAP-ONLY; legend strips it out so legend stays as-is
   return L.divIcon({
     className: `poi-marker ${extraClass}`,
     html: faHtml,
-    iconSize: [18, 18],     // matches legend-dot size (18px)
+    iconSize: [18, 18],   // matches legend-dot size
     iconAnchor: [9, 9]
   });
 }
@@ -75,7 +67,7 @@ function sportHas(feature, val) {
 }
 
 // -------------------------------
-// 4) Categories (no onByDefault => none selected initially)
+// 4) Categories (none selected initially)
 // -------------------------------
 var categories = [
   { name: "Mini Golf",          filter: f => f.properties?.leisure === "miniature_golf",     icon: makeFaIcon('poi-icon mini-golf',   '<i class="fa-solid fa-golf-ball-tee"></i>'),       color: "#15693C" },
@@ -95,7 +87,7 @@ var categories = [
 ];
 
 // -------------------------------
-// 5) Legend (Show/Hide toggle) — stays dot+glyph, NO map halo
+// 5) Legend (Show/Hide toggle)
 // -------------------------------
 var legend = L.control({ position: isMobile ? "bottomleft" : "topleft" });
 
@@ -103,10 +95,8 @@ legend.onAdd = function () {
   var div = L.DomUtil.create("div", "legend");
 
   var itemsHtml = categories.map(cat => {
-    // Remove poi-marker so legend doesn't inherit map halo pseudo-element
-    const cls = (cat.icon.options.className || "")
-      .replace(/\bpoi-marker\b/g, "")
-      .trim();
+    // Strip poi-marker so legend doesn't get map halo styles
+    const cls = (cat.icon.options.className || "").replace(/\bpoi-marker\b/g, "").trim();
 
     return `
       <div class="legend-item">
@@ -119,20 +109,16 @@ legend.onAdd = function () {
     `;
   }).join("");
 
-  // Start collapsed on mobile, expanded on desktop
   div.innerHTML = `
     <div class="legend-header">
       <div class="legend-title">Legend</div>
-      <button class="legend-toggle" type="button">
-        ${isMobile ? "Show" : "Hide"}
-      </button>
+      <button class="legend-toggle" type="button">${isMobile ? "Show" : "Hide"}</button>
     </div>
     <div class="legend-body ${isMobile ? "is-collapsed" : ""}">
       ${itemsHtml}
     </div>
   `;
 
-  // Allow clicks on the button and prevent map drag/zoom while interacting
   L.DomEvent.disableClickPropagation(div);
   L.DomEvent.disableScrollPropagation(div);
 
@@ -162,9 +148,8 @@ fetch('data/novafunmap_12.31.25.geojson')
     return r.json();
   })
   .then(data => {
-
     categories.forEach(cat => {
-      const points = L.geoJSON(data, {
+      overlays[cat.name] = L.geoJSON(data, {
         filter: cat.filter,
         pointToLayer: (feature, latlng) => L.marker(latlng, { icon: cat.icon }),
         onEachFeature: (feature, layer) => {
@@ -184,16 +169,13 @@ fetch('data/novafunmap_12.31.25.geojson')
         }
       });
 
-      overlays[cat.name] = points;
-      // Starts with NO categories selected
+      // DO NOT add overlays to the map by default (none selected)
     });
 
-    // Mobile: keep this collapsed so it doesn't cover the screen
+    // Add the layer control ONCE
     L.control.layers(baseMaps, overlays, { collapsed: isMobile }).addTo(map);
 
     // Mobile render sanity
-    if (isMobile) {
-      setTimeout(() => map.invalidateSize(), 200);
-    }
+    if (isMobile) setTimeout(() => map.invalidateSize(), 200);
   })
   .catch(err => console.error("GeoJSON load error:", err));
