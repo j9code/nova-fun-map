@@ -101,8 +101,10 @@ var legend = L.control({ position: isMobile ? "bottomleft" : "topleft" });
 legend.onAdd = function () {
   var div = L.DomUtil.create("div", "legend");
 
-  var itemsHtml = categories.map(cat => {
-  const cls = cat.icon.options.className || ""; // e.g. "poi-icon mini-golf"
+ var itemsHtml = categories.map(cat => {
+  // icon class now includes "poi-marker ..." for the map; remove it for legend
+  const cls = (cat.icon.options.className || "").replace(/\bpoi-marker\b/g, "").trim();
+
   return `
     <div class="legend-item">
       <span class="legend-swatch">
@@ -113,6 +115,7 @@ legend.onAdd = function () {
     </div>
   `;
 }).join("");
+
 
 
   // Start collapsed on mobile, expanded on desktop
