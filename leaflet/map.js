@@ -63,13 +63,15 @@ cartoLight.addTo(map);
 // and make the icon size/anchors match the CSS box.
 function makeFaIcon(categoryClass, faHtml) {
   return L.divIcon({
-    className: 'poi-icon ' + categoryClass,
+    // include Leaflet's class + your own classes
+    className: 'leaflet-div-icon poi-icon ' + categoryClass,
     html: faHtml,
     iconSize: [18, 18],
     iconAnchor: [9, 9],
     popupAnchor: [0, -9]
   });
 }
+
 
 function sportHas(feature, val) {
   const s = (feature.properties && feature.properties.sport) || "";
