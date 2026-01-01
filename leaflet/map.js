@@ -59,10 +59,10 @@ cartoLight.addTo(map);
 // -------------------------------
 function makeFaIcon(extraClass, faHtml) {
   return L.divIcon({
-    className: `poi-icon map-halo ${extraClass}`,  // add map-halo
+    className: `poi-marker ${extraClass}`, // add poi-marker
     html: faHtml,
-    iconSize: [18, 18],     // match the legend-dot (18px)
-    iconAnchor: [9, 11]
+    iconSize: [18, 18],     // matches as legend-swatch
+    iconAnchor: [9, 9]
   });
 }
 
