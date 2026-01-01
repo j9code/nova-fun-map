@@ -60,19 +60,19 @@ body {
 }
 
 /* Category colors (match your map.js "color" values) */
-.poi-icon.mini-golf i { color: #3DDC97; }
-.poi-icon.arcade i { color: #010200; }
-.poi-icon.trampoline i { color: #9A78E0; }
+.poi-icon.mini-golf i { color: #15693C; }
+.poi-icon.arcade i { color: #694DBF; }
+.poi-icon.trampoline i { color: #DB7202; }
 .poi-icon.laser i { color: #D6665C; }
-.poi-icon.indoor-play i { color: #5CD6C6; }
+.poi-icon.indoor-play i { color: #187996; }
 .poi-icon.climbing i { color: #A1953F; }
 .poi-icon.karting i { color: #000000; }
-.poi-icon.escape i { color: #5255C7; }
+.poi-icon.escape i { color: #2791C2; }
 .poi-icon.bowling i { color: #121211; }
-.poi-icon.carousel i { color: #5E5429; }
-.poi-icon.train i { color: #2C6FC7; }
-.poi-icon.scooter i { color: #FFED78; }
-.poi-icon.water-park i { color: #78DDFF; }
+.poi-icon.carousel i { color: #B80D7F; }
+.poi-icon.train i { color: #C91B0E; }
+.poi-icon.scooter i { color: #8A8432; }
+.poi-icon.water-park i { color: #0E59C9; }
 .poi-icon.zoo i { color: #D19636; }
 
 /* ==============================
