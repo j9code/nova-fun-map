@@ -43,69 +43,37 @@ body {
   }
 }
 
-/* Ensure Leaflet controls are always above the map/legend */
-.leaflet-control {
-  z-index: 1000;
-}
 
 /* ==============================
-   Map icons + halo (legend-style tint)
+   Map icons (category-colored)
    ============================== */
-
-/* Container for each FA icon marker */
 .poi-icon {
   width: 12px;
   height: 12px;
   text-align: center;
 }
 
-/* Let the container control the color so halo can use currentColor */
+/* Make the glyph readable (Font Awesome) */
 .poi-icon i {
   font-size: 12px;
   line-height: 12px;
-  color: inherit;
 }
 
-/* Category colors (set on CONTAINER, not only on <i>) */
-.poi-icon.mini-golf { color: #15693C; }
-.poi-icon.arcade { color: #694DBF; }
-.poi-icon.trampoline { color: #DB7202; }
-.poi-icon.laser { color: #D6665C; }
-.poi-icon.indoor-play { color: #187996; }
-.poi-icon.climbing { color: #A1953F; }
-.poi-icon.karting { color: #000000; }
-.poi-icon.escape { color: #2791C2; }
-.poi-icon.bowling { color: #121211; }
-.poi-icon.carousel { color: #B80D7F; }
-.poi-icon.train { color: #C91B0E; }
-.poi-icon.scooter { color: #8A8432; }
-.poi-icon.water-park { color: #0E59C9; }
-.poi-icon.zoo { color: #D19636; }
-
-/* The halo wrapper (your JS uses class "poi-marker") */
-.poi-marker {
-  position: relative;
-  width: 18px;   /* same as legend-dot */
-  height: 18px;  /* same as legend-dot */
-  border-radius: 50%;
-}
-
-/* Filled tint halo (NO border) */
-.poi-marker::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: currentColor; /* same as icon color */
-  opacity: 0.15;            /* same vibe as legend-dot */
-}
-
-/* Keep the glyph above the halo and vertically centered */
-.poi-marker i {
-  position: relative;
-  z-index: 1;
-  line-height: 18px; /* centers icon inside 18px halo */
-}
+/* Category colors (match your map.js "color" values) */
+.poi-icon.mini-golf i { color: #3DDC97; }
+.poi-icon.arcade i { color: #010200; }
+.poi-icon.trampoline i { color: #9A78E0; }
+.poi-icon.laser i { color: #D6665C; }
+.poi-icon.indoor-play i { color: #5CD6C6; }
+.poi-icon.climbing i { color: #A1953F; }
+.poi-icon.karting i { color: #000000; }
+.poi-icon.escape i { color: #5255C7; }
+.poi-icon.bowling i { color: #121211; }
+.poi-icon.carousel i { color: #5E5429; }
+.poi-icon.train i { color: #2C6FC7; }
+.poi-icon.scooter i { color: #FFED78; }
+.poi-icon.water-park i { color: #78DDFF; }
+.poi-icon.zoo i { color: #D19636; }
 
 /* ==============================
    Legend container
@@ -121,30 +89,9 @@ body {
   overflow-y: auto;
 }
 
-.legend-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 6px;
-}
-
 .legend-title {
   font-weight: 700;
-  margin: 0;
-}
-
-.legend-toggle {
-  border: 1px solid #bbb;
-  background: #fff;
-  border-radius: 8px;
-  padding: 4px 8px;
-  font: 12px/1 system-ui, sans-serif;
-  cursor: pointer;
-}
-
-.legend-body.is-collapsed {
-  display: none;
+  margin-bottom: 8px;
 }
 
 .legend-item {
@@ -160,7 +107,38 @@ body {
   flex: 0 0 22px;
 }
 
-/* Legend dot stays as-is (this is your reference style) */
+.legend-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.legend-toggle {
+  border: 1px solid #bbb;
+  background: #fff;
+  border-radius: 8px;
+  padding: 4px 8px;
+  font: 12px/1 system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.legend-body.is-collapsed {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .legend {
+    width: min(260px, 88vw);
+    max-height: 40vh;
+    overflow-y: auto;
+    font-size: 13px;
+  }
+}
+
+
+/* Faint colored dot behind the legend icon (uses inline background from JS) */
 .legend-dot {
   position: absolute;
   left: 50%;
@@ -172,7 +150,7 @@ body {
   opacity: 0.15;
 }
 
-/* Center the injected glyph */
+/* Center the injected Font Awesome glyph */
 .legend-glyph {
   position: absolute;
   left: 50%;
@@ -181,24 +159,7 @@ body {
   line-height: 1;
 }
 
-/* Make sure legend glyph uses same icon sizing and inherits category color */
-.legend-glyph.poi-icon {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  text-align: center;
-}
-.legend-glyph.poi-icon i {
+/* Legend icon size + allow JS inline color to win */
+.legend-glyph i {
   font-size: 12px;
-  line-height: 12px;
-  color: inherit;
-}
-
-@media (max-width: 768px) {
-  .legend {
-    width: min(260px, 88vw);
-    max-height: 40vh;
-    overflow-y: auto;
-    font-size: 13px;
-  }
 }
