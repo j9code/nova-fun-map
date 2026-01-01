@@ -55,56 +55,67 @@ var baseMaps = {
 cartoLight.addTo(map);
 
 // -------------------------------
-// 3) Helpers for icons + sport parsing
+// 3) Helpers
 // -------------------------------
 
-// IMPORTANT FIX:
-// Always include the base class "poi-icon" so your CSS applies,
-// and make the icon size/anchors match the CSS box.
-function makeFaIcon(categoryClass, faHtml) {
+// Leaflet + your class names; keep marker icon separate from legend HTML.
+// Markers get a colored wrapper span so they ALWAYS show (even if CSS is weird).
+function makeMarkerIcon(categoryClass, faHtml, color) {
   return L.divIcon({
-    // include Leaflet's class + your own classes
     className: 'leaflet-div-icon poi-icon ' + categoryClass,
-    html: faHtml,
+    html: `<span class="poi-fa" style="color:${color}">${faHtml}</span>`,
     iconSize: [18, 18],
     iconAnchor: [9, 9],
     popupAnchor: [0, -9]
   });
 }
 
+// Legend should stay unchanged: it expects cat.icon.options.html
+function makeLegendIcon(faHtml) {
+  return L.divIcon({
+    className: 'poi-icon',
+    html: faHtml,
+    iconSize: [18, 18],
+    iconAnchor: [9, 9]
+  });
+}
 
 function sportHas(feature, val) {
   const s = (feature.properties && feature.properties.sport) || "";
   const txt = String(s);
-  // support "laser_tag;something", "laser_tag something", etc.
   const parts = txt.split(/[;,]+/).map(x => x.trim()).filter(Boolean);
   if (parts.includes(val)) return true;
-  // fallback (some data arrives as free text)
   return txt.includes(val);
 }
 
 // -------------------------------
-// 4) Categories (no onByDefault => none selected initially)
+// 4) Categories (none selected initially)
 // -------------------------------
 var categories = [
-  { name: "Mini Golf",          filter: f => f.properties?.leisure === "miniature_golf",    icon: makeFaIcon('mini-golf',   '<i class="fa-solid fa-golf-ball-tee"></i>'),      color: "#15693C" },
-  { name: "Amusement Centers",  filter: f => f.properties?.leisure === "amusement_arcade",  icon: makeFaIcon('arcade',      '<i class="fa-brands fa-fort-awesome"></i>'),      color: "#694DBF" },
-  { name: "Trampoline Parks",   filter: f => f.properties?.leisure === "trampoline_park",   icon: makeFaIcon('trampoline',  '<i class="fa-solid fa-person-falling"></i>'),      color: "#DB7202" },
-  { name: "Laser Tag",          filter: f => sportHas(f, "laser_tag"),                      icon: makeFaIcon('laser',       '<i class="fa-solid fa-bullseye"></i>'),            color: "#D6665C" },
-  { name: "Indoor Playgrounds", filter: f => f.properties?.leisure === "indoor_play",       icon: makeFaIcon('indoor-play', '<i class="fa-solid fa-child-reaching"></i>'),      color: "#187996" },
-  { name: "Climbing Parks",     filter: f => sportHas(f, "climbing_adventure"),             icon: makeFaIcon('climbing',    '<i class="fa-solid fa-person-walking"></i>'),       color: "#A1953F" },
-  { name: "Go Karts",           filter: f => sportHas(f, "karting"),                        icon: makeFaIcon('karting',     '<i class="fa-solid fa-flag-checkered"></i>'),      color: "#000000" },
-  { name: "Escape Rooms",       filter: f => f.properties?.leisure === "escape_game",       icon: makeFaIcon('escape',      '<i class="fa-solid fa-puzzle-piece"></i>'),        color: "#2791C2" },
-  { name: "Bowling",            filter: f => f.properties?.leisure === "bowling_alley",     icon: makeFaIcon('bowling',     '<i class="fa-solid fa-bowling-ball"></i>'),         color: "#121211" },
-  { name: "Carousels",          filter: f => f.properties?.attraction === "carousel",       icon: makeFaIcon('carousel',    '<i class="fa-solid fa-horse-head"></i>'),           color: "#B80D7F" },
-  { name: "Miniature Trains",   filter: f => f.properties?.attraction === "train",          icon: makeFaIcon('train',       '<i class="fa-solid fa-train"></i>'),                color: "#C91B0E" },
-  { name: "Animal Scooters",    filter: f => f.properties?.attraction === "animal_scooter", icon: makeFaIcon('scooter',     '<i class="fa-solid fa-dragon"></i>'),               color: "#8A8432" },
-  { name: "Water Parks",        filter: f => f.properties?.leisure === "water_park",        icon: makeFaIcon('water-park',  '<i class="fa-solid fa-water"></i>'),                color: "#0E59C9" },
-  { name: "Animal Parks",       filter: f => f.properties?.tourism === "zoo",               icon: makeFaIcon('zoo',         '<i class="fa-solid fa-paw"></i>'),                  color: "#D19636" }
+  { name: "Mini Golf",          key: "mini-golf",   color: "#15693C", fa: '<i class="fa-solid fa-golf-ball-tee"></i>',       filter: f => f.properties?.leisure === "miniature_golf" },
+  { name: "Amusement Centers",  key: "arcade",      color: "#694DBF", fa: '<i class="fa-brands fa-fort-awesome"></i>',       filter: f => f.properties?.leisure === "amusement_arcade" },
+  { name: "Trampoline Parks",   key: "trampoline",  color: "#DB7202", fa: '<i class="fa-solid fa-person-falling"></i>',      filter: f => f.properties?.leisure === "trampoline_park" },
+  { name: "Laser Tag",          key: "laser",       color: "#D6665C", fa: '<i class="fa-solid fa-bullseye"></i>',            filter: f => sportHas(f, "laser_tag") },
+  { name: "Indoor Playgrounds", key: "indoor-play", color: "#187996", fa: '<i class="fa-solid fa-child-reaching"></i>',      filter: f => f.properties?.leisure === "indoor_play" },
+  { name: "Climbing Parks",     key: "climbing",    color: "#A1953F", fa: '<i class="fa-solid fa-person-walking"></i>',      filter: f => sportHas(f, "climbing_adventure") },
+  { name: "Go Karts",           key: "karting",     color: "#000000", fa: '<i class="fa-solid fa-flag-checkered"></i>',      filter: f => sportHas(f, "karting") },
+  { name: "Escape Rooms",       key: "escape",      color: "#2791C2", fa: '<i class="fa-solid fa-puzzle-piece"></i>',        filter: f => f.properties?.leisure === "escape_game" },
+  { name: "Bowling",            key: "bowling",     color: "#121211", fa: '<i class="fa-solid fa-bowling-ball"></i>',         filter: f => f.properties?.leisure === "bowling_alley" },
+  { name: "Carousels",          key: "carousel",    color: "#B80D7F", fa: '<i class="fa-solid fa-horse-head"></i>',           filter: f => f.properties?.attraction === "carousel" },
+  { name: "Miniature Trains",   key: "train",       color: "#C91B0E", fa: '<i class="fa-solid fa-train"></i>',                filter: f => f.properties?.attraction === "train" },
+  { name: "Animal Scooters",    key: "scooter",     color: "#8A8432", fa: '<i class="fa-solid fa-dragon"></i>',               filter: f => f.properties?.attraction === "animal_scooter" },
+  { name: "Water Parks",        key: "water-park",  color: "#0E59C9", fa: '<i class="fa-solid fa-water"></i>',                filter: f => f.properties?.leisure === "water_park" },
+  { name: "Animal Parks",       key: "zoo",         color: "#D19636", fa: '<i class="fa-solid fa-paw"></i>',                  filter: f => f.properties?.tourism === "zoo" }
 ];
 
+// Build both icon types
+categories.forEach(cat => {
+  cat.icon = makeLegendIcon(cat.fa);                    // used by legend ONLY
+  cat.markerIcon = makeMarkerIcon(cat.key, cat.fa, cat.color); // used by map markers
+});
+
 // -------------------------------
-// 5) Legend (Show/Hide toggle) — DO NOT CHANGE
+// 5) Legend (Show/Hide toggle) — UNCHANGED
 // -------------------------------
 var legend = L.control({ position: isMobile ? "bottomleft" : "topleft" });
 
@@ -170,7 +181,7 @@ fetch('data/novafunmap_12.31.25.geojson')
     categories.forEach(cat => {
       const points = L.geoJSON(data, {
         filter: cat.filter,
-        pointToLayer: (feature, latlng) => L.marker(latlng, { icon: cat.icon }),
+        pointToLayer: (feature, latlng) => L.marker(latlng, { icon: cat.markerIcon }),
         onEachFeature: (feature, layer) => {
           const p = feature.properties || {};
           const name = p.name || "Unnamed";
@@ -189,13 +200,10 @@ fetch('data/novafunmap_12.31.25.geojson')
       });
 
       overlays[cat.name] = points;
-      // NOTE: no default addTo(map) — starts with NO categories selected
     });
 
-    // Mobile: keep this collapsed so it doesn't cover the screen
     L.control.layers(baseMaps, overlays, { collapsed: isMobile }).addTo(map);
 
-    // Mobile render sanity
     if (isMobile) {
       setTimeout(() => map.invalidateSize(), 200);
     }
