@@ -39,16 +39,16 @@ var cartoDark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/
   maxZoom: 20
 });
 
-var esriImagery = L.tileLayer(
-  'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-  { attribution: 'Tiles &copy; Esri', maxZoom: 19 }
-);
+//var esriImagery = L.tileLayer(
+//  'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+//  { attribution: 'Tiles &copy; Esri', maxZoom: 19 }
+//);
 
 var baseMaps = {
   "Light": cartoLight,
   "Voyager": cartoVoyager,
-  "Dark": cartoDark,
-  "Imagery": esriImagery
+  "Dark": cartoDark
+ // "Imagery": esriImagery
 };
 
 // Default basemap
@@ -155,7 +155,7 @@ legend.addTo(map);
 // -------------------------------
 var overlays = {};
 
-fetch('data/novafunmap_12.30.25.geojson')
+fetch('data/novafunmap_12.31.25.geojson')
   .then(r => {
     if (!r.ok) throw new Error(`GeoJSON HTTP ${r.status}`);
     return r.json();
