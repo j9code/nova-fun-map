@@ -3,8 +3,9 @@
 // - Loads ONE GeoJSON file: data/novafunmap_12.31.25.geojson
 // - Builds multiple toggle layers from tags
 // - Auto-builds a legend from the same category list
-// - Starts with NO categories selected
+// - Starts with NO categories selected (so icons appear only after you toggle layers on)
 // - Legend: Show/Hide works (collapsed by default on mobile)
+// - Layers control: top-right (so it never hides behind the legend)
 // ================================
 
 // -------------------------------
@@ -51,7 +52,7 @@ cartoLight.addTo(map);
 // 3) Helpers for icons + sport parsing
 // -------------------------------
 function makeFaIcon(extraClass, faHtml) {
-  // poi-marker is MAP-ONLY; legend strips it out so legend stays as-is
+  // poi-marker is MAP-ONLY; legend strips it so legend doesn't inherit map halo styles
   return L.divIcon({
     className: `poi-marker ${extraClass}`,
     html: faHtml,
@@ -67,7 +68,7 @@ function sportHas(feature, val) {
 }
 
 // -------------------------------
-// 4) Categories (none selected initially)
+// 4) Categories (NONE selected initially)
 // -------------------------------
 var categories = [
   { name: "Mini Golf",          filter: f => f.properties?.leisure === "miniature_golf",     icon: makeFaIcon('poi-icon mini-golf',   '<i class="fa-solid fa-golf-ball-tee"></i>'),       color: "#15693C" },
@@ -75,27 +76,27 @@ var categories = [
   { name: "Trampoline Parks",   filter: f => f.properties?.leisure === "trampoline_park",    icon: makeFaIcon('poi-icon trampoline',  '<i class="fa-solid fa-person-falling"></i>'),       color: "#DB7202" },
   { name: "Laser Tag",          filter: f => sportHas(f, "laser_tag"),                       icon: makeFaIcon('poi-icon laser',       '<i class="fa-solid fa-bullseye"></i>'),             color: "#D6665C" },
   { name: "Indoor Playgrounds", filter: f => f.properties?.leisure === "indoor_play",        icon: makeFaIcon('poi-icon indoor-play', '<i class="fa-solid fa-child-reaching"></i>'),       color: "#187996" },
-  { name: "Climbing Parks",     filter: f => sportHas(f, "climbing_adventure"),              icon: makeFaIcon('poi-icon climbing',    '<i class="fa-solid fa-person-walking"></i>'),        color: "#A1953F" },
+  { name: "Climbing Parks",     filter: f => sportHas(f, "climbing_adventure"),              icon: makeFaIcon('poi-icon climbing',    '<i class="fa-solid fa-person-walking"></i>'),       color: "#A1953F" },
   { name: "Go Karts",           filter: f => sportHas(f, "karting"),                         icon: makeFaIcon('poi-icon karting',     '<i class="fa-solid fa-flag-checkered"></i>'),       color: "#000000" },
   { name: "Escape Rooms",       filter: f => f.properties?.leisure === "escape_game",        icon: makeFaIcon('poi-icon escape',      '<i class="fa-solid fa-puzzle-piece"></i>'),         color: "#2791C2" },
-  { name: "Bowling",            filter: f => f.properties?.leisure === "bowling_alley",      icon: makeFaIcon('poi-icon bowling',     '<i class="fa-solid fa-bowling-ball"></i>'),          color: "#121211" },
-  { name: "Carousels",          filter: f => f.properties?.attraction === "carousel",        icon: makeFaIcon('poi-icon carousel',    '<i class="fa-solid fa-horse-head"></i>'),            color: "#B80D7F" },
-  { name: "Miniature Trains",   filter: f => f.properties?.attraction === "train",           icon: makeFaIcon('poi-icon train',       '<i class="fa-solid fa-train"></i>'),                 color: "#C91B0E" },
-  { name: "Animal Scooters",    filter: f => f.properties?.attraction === "animal_scooter",  icon: makeFaIcon('poi-icon scooter',     '<i class="fa-solid fa-dragon"></i>'),                color: "#8A8432" },
-  { name: "Water Parks",        filter: f => f.properties?.leisure === "water_park",         icon: makeFaIcon('poi-icon water-park',  '<i class="fa-solid fa-water"></i>'),                 color: "#0E59C9" },
-  { name: "Animal Parks",       filter: f => f.properties?.tourism === "zoo",                icon: makeFaIcon('poi-icon zoo',         '<i class="fa-solid fa-paw"></i>'),                   color: "#D19636" }
+  { name: "Bowling",            filter: f => f.properties?.leisure === "bowling_alley",      icon: makeFaIcon('poi-icon bowling',     '<i class="fa-solid fa-bowling-ball"></i>'),         color: "#121211" },
+  { name: "Carousels",          filter: f => f.properties?.attraction === "carousel",        icon: makeFaIcon('poi-icon carousel',    '<i class="fa-solid fa-horse-head"></i>'),           color: "#B80D7F" },
+  { name: "Miniature Trains",   filter: f => f.properties?.attraction === "train",           icon: makeFaIcon('poi-icon train',       '<i class="fa-solid fa-train"></i>'),                color: "#C91B0E" },
+  { name: "Animal Scooters",    filter: f => f.properties?.attraction === "animal_scooter",  icon: makeFaIcon('poi-icon scooter',     '<i class="fa-solid fa-dragon"></i>'),               color: "#8A8432" },
+  { name: "Water Parks",        filter: f => f.properties?.leisure === "water_park",         icon: makeFaIcon('poi-icon water-park',  '<i class="fa-solid fa-water"></i>'),                color: "#0E59C9" },
+  { name: "Animal Parks",       filter: f => f.properties?.tourism === "zoo",                icon: makeFaIcon('poi-icon zoo',         '<i class="fa-solid fa-paw"></i>'),                  color: "#D19636" }
 ];
 
 // -------------------------------
-// 5) Legend (Show/Hide toggle)
+// 5) Legend (Show/Hide toggle) — bottom-left so it doesn't block layers control
 // -------------------------------
-var legend = L.control({ position: isMobile ? "bottomleft" : "topleft" });
+var legend = L.control({ position: "bottomleft" });
 
 legend.onAdd = function () {
   var div = L.DomUtil.create("div", "legend");
 
   var itemsHtml = categories.map(cat => {
-    // Strip poi-marker so legend doesn't get map halo styles
+    // remove poi-marker so legend doesn't get map halo pseudo-element
     const cls = (cat.icon.options.className || "").replace(/\bpoi-marker\b/g, "").trim();
 
     return `
@@ -148,6 +149,7 @@ fetch('data/novafunmap_12.31.25.geojson')
     return r.json();
   })
   .then(data => {
+
     categories.forEach(cat => {
       overlays[cat.name] = L.geoJSON(data, {
         filter: cat.filter,
@@ -169,14 +171,13 @@ fetch('data/novafunmap_12.31.25.geojson')
         }
       });
 
-      // DO NOT add overlays to the map by default (none selected)
+      // Starts with NO categories selected:
+      // do NOT addTo(map) here
     });
 
-    // Add the layer control ONCE
-    L.control.layers(baseMaps, overlays, { collapsed: isMobile }).addTo(map);
+    // Add the layer control ONCE, and put it top-right so it's always visible
     var layerControl = L.control.layers(baseMaps, overlays, { collapsed: isMobile }).addTo(map);
-console.log("Layer control added:", layerControl);
-
+    layerControl.setPosition("topright");
 
     // Mobile render sanity
     if (isMobile) setTimeout(() => map.invalidateSize(), 200);
