@@ -87,32 +87,34 @@ body {
 .poi-icon.zoo i { color: #D19636; }
 
 /* ==============================
-   Subtle ring (same as legend)
+   Halo (Same as legend)
    ============================== */
-.poi-marker {
+
+/* Map halo: same vibe as legend-dot (filled, no border) */
+.map-halo {
   position: relative;
   width: 18px;
   height: 18px;
   border-radius: 50%;
 }
 
-/* subtle 1px ring, no fill */
-.poi-marker::before {
+/* Filled halo behind the icon */
+.map-halo::before {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  border: 1px solid currentColor; /* uses category color */
-  opacity: 0.35;                  /* subtle, not busy */
-  box-sizing: border-box;
+  background: currentColor; /* uses the category color */
+  opacity: 0.15;            /* match legend-dot feel */
 }
 
-/* keep the icon centered above the ring */
-.poi-marker i {
+/* Keep icon above the halo */
+.map-halo i {
   position: relative;
   z-index: 1;
-  line-height: 18px;
+  line-height: 18px;        /* center vertically */
 }
+
 
 
 /* ==============================
