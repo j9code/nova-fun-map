@@ -43,7 +43,6 @@ body {
   }
 }
 
-
 /* ==============================
    Map icons (category-colored)
    ============================== */
@@ -55,6 +54,18 @@ body {
 
 /* Make the glyph readable (Font Awesome) */
 .poi-icon i {
+  font-size: 12px;
+  line-height: 12px;
+}
+
+/* Legend icons: same styling as map icons (when legend-glyph includes poi-icon classes) */
+.legend-glyph.poi-icon {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  text-align: center;
+}
+.legend-glyph.poi-icon i {
   font-size: 12px;
   line-height: 12px;
 }
@@ -137,7 +148,6 @@ body {
   }
 }
 
-
 /* Faint colored dot behind the legend icon (uses inline background from JS) */
 .legend-dot {
   position: absolute;
@@ -159,7 +169,5 @@ body {
   line-height: 1;
 }
 
-/* Legend icon size + allow JS inline color to win */
-.legend-glyph i {
-  font-size: 12px;
-}
+/* Remove or keep; redundant now. Keeping it won't hurt. */
+/* .legend-glyph i { font-size: 12px; } */
