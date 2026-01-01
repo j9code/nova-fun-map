@@ -149,7 +149,7 @@ legend.addTo(map);
 // -------------------------------
 var overlays = {};
 
-fetch('data/novafunmap_12.30.25.geojson')
+fetch('data/novafunmap_12.31.25.geojson')
   .then(r => {
     if (!r.ok) throw new Error(`GeoJSON HTTP ${r.status}`);
     return r.json();
