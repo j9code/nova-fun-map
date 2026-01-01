@@ -87,6 +87,35 @@ body {
 .poi-icon.zoo i { color: #D19636; }
 
 /* ==============================
+   Subtle ring (same as legend)
+   ============================== */
+.poi-marker {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+}
+
+/* subtle 1px ring, no fill */
+.poi-marker::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid currentColor; /* uses category color */
+  opacity: 0.35;                  /* subtle, not busy */
+  box-sizing: border-box;
+}
+
+/* keep the icon centered above the ring */
+.poi-marker i {
+  position: relative;
+  z-index: 1;
+  line-height: 18px;
+}
+
+
+/* ==============================
    Legend container
    ============================== */
 .legend {
