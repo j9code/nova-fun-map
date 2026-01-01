@@ -174,6 +174,9 @@ fetch('data/novafunmap_12.31.25.geojson')
 
     // Add the layer control ONCE
     L.control.layers(baseMaps, overlays, { collapsed: isMobile }).addTo(map);
+    var layerControl = L.control.layers(baseMaps, overlays, { collapsed: isMobile }).addTo(map);
+console.log("Layer control added:", layerControl);
+
 
     // Mobile render sanity
     if (isMobile) setTimeout(() => map.invalidateSize(), 200);
