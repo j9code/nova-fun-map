@@ -1,6 +1,6 @@
 // ================================
 // PlayNoVA — map.js (icons only, mobile-friendly legend)
-// - Loads ONE GeoJSON file: data/novafunmap_12.30.25.geojson
+// - Loads ONE GeoJSON file: data/novafunmap_12.31.25.geojson
 // - Builds multiple toggle layers from tags
 // - Auto-builds a legend from the same category list
 // - NO halos (icons only)
