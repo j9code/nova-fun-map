@@ -76,6 +76,13 @@ body {
   line-height: 1;
 }
 
+/* Ensure Leaflet's default divIcon styling doesn't add a white box/border */
+.leaflet-div-icon.poi-icon {
+  background: transparent;
+  border: none;
+}
+
+
 /* Category colors (match your map.js "color" values) */
 .poi-icon.mini-golf i { color: #3DDC97; }
 .poi-icon.arcade i { color: #010200; }
