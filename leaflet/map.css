@@ -48,15 +48,15 @@ body {
    Map icons (category-colored)
    ============================== */
 .poi-icon {
-  width: 8px;
-  height: 8px;
+  width: 12px;
+  height: 12px;
   text-align: center;
 }
 
 /* Make the glyph readable (Font Awesome) */
 .poi-icon i {
   font-size: 12px;
-  line-height: 8px;
+  line-height: 12px;
 }
 
 /* Category colors (match your map.js "color" values) */
