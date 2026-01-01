@@ -47,16 +47,33 @@ body {
 /* ==============================
    Map icons (category-colored)
    ============================== */
+
+/* IMPORTANT:
+   Make DivIcons actually render as a centered box.
+   Leaflet positions the icon DIV; we need display + centering + sizing. */
 .poi-icon {
-  width: 12px;
-  height: 12px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* No default square/border */
+  background: transparent;
+  border: none;
+
+  /* Leaflet will transform/position; keep layout stable */
+  box-sizing: border-box;
+
+  /* Prevent any inherited text weirdness */
   text-align: center;
+  line-height: 1;
 }
 
 /* Make the glyph readable (Font Awesome) */
 .poi-icon i {
-  font-size: 12px;
-  line-height: 12px;
+  font-size: 16px;
+  line-height: 1;
 }
 
 /* Category colors (match your map.js "color" values) */
@@ -74,6 +91,7 @@ body {
 .poi-icon.scooter i { color: #FFED78; }
 .poi-icon.water-park i { color: #78DDFF; }
 .poi-icon.zoo i { color: #D19636; }
+
 
 /* ==============================
    Legend container
