@@ -48,9 +48,12 @@ body {
    Map icons (category-colored)
    ============================== */
 
-/* IMPORTANT:
-   Make DivIcons actually render as a centered box.
-   Leaflet positions the icon DIV; we need display + centering + sizing. */
+/* Make Leaflet DivIcons render as clean, centered glyphs (no box) */
+.leaflet-div-icon.poi-icon {
+  background: transparent;
+  border: none;
+}
+
 .poi-icon {
   width: 18px;
   height: 18px;
@@ -58,32 +61,30 @@ body {
   align-items: center;
   justify-content: center;
 
-  /* No default square/border */
   background: transparent;
   border: none;
 
-  /* Leaflet will transform/position; keep layout stable */
   box-sizing: border-box;
-
-  /* Prevent any inherited text weirdness */
   text-align: center;
   line-height: 1;
 }
 
+/* Wrapper we inject from JS for marker coloring */
+.poi-fa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
 /* Make the glyph readable (Font Awesome) */
-.poi-icon i {
+.poi-fa i {
   font-size: 16px;
   line-height: 1;
 }
 
-/* Ensure Leaflet's default divIcon styling doesn't add a white box/border */
-.leaflet-div-icon.poi-icon {
-  background: transparent;
-  border: none;
-}
-
-
-/* Category colors (match your map.js "color" values) */
+/* Category colors (match your map.js "color" values)
+   (These are now a backup; the marker also sets inline color via .poi-fa) */
 .poi-icon.mini-golf i { color: #3DDC97; }
 .poi-icon.arcade i { color: #010200; }
 .poi-icon.trampoline i { color: #9A78E0; }
@@ -101,7 +102,7 @@ body {
 
 
 /* ==============================
-   Legend container
+   Legend container  (UNCHANGED)
    ============================== */
 .legend {
   background: rgba(255, 255, 255, 0.95);
@@ -161,7 +162,6 @@ body {
     font-size: 13px;
   }
 }
-
 
 /* Faint colored dot behind the legend icon (uses inline background from JS) */
 .legend-dot {
