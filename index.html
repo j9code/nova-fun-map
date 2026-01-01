@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>PlayNoVA</title>
+  <title>NoVa Fun Map</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Leaflet CSS (load first) -->
@@ -11,19 +11,24 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
+  <!-- Fallback height so the map cannot collapse -->
+  <style>
+    #map { height: 600px; width: 100%; border: 1px solid #ccc; }
+  </style>
+
   <!-- Your map styling -->
   <link rel="stylesheet" href="leaflet/map.css" />
 </head>
 <body>
 
-  <div class="header">
-    <h3>NoVa Fun Map</h3>
-    <p>Current as of: January 1, 2026</p>
-  </div>
+<div class="header">
+  <h3>NoVa Fun Map</h3>
+  <p>Current as of: 1.1.26.</p>
+</div>
 
   <div id="map"></div>
 
-  <!-- Leaflet + your map logic -->
+  <!-- Use defer to guarantee map div exists and Leaflet is loaded -->
   <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script defer src="leaflet/map.js"></script>
 
