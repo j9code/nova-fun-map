@@ -106,7 +106,7 @@ legend.onAdd = function () {
     <div class="legend-item">
       <span class="legend-swatch">
         <span class="legend-dot" style="background:${cat.color}"></span>
-        <span class="legend-glyph ${cls}">${cat.icon.options.html}</span>
+        <span class="legend-glyph ${cat.icon.options.className}">${cat.icon.options.html}</span>
       </span>
       <span>${cat.name}</span>
     </div>
