@@ -101,16 +101,17 @@ legend.onAdd = function () {
   var div = L.DomUtil.create("div", "legend");
 
   var itemsHtml = categories.map(cat => {
-    return `
-      <div class="legend-item">
-        <span class="legend-swatch">
-          <span class="legend-dot" style="background:${cat.color}"></span>
-          <span class="legend-glyph" style="color:${cat.color}">${cat.icon.options.html}</span>
-        </span>
-        <span>${cat.name}</span>
-      </div>
-    `;
-  }).join("");
+  const cls = cat.icon.options.className || ""; // e.g. "poi-icon mini-golf"
+  return `
+    <div class="legend-item">
+      <span class="legend-swatch">
+        <span class="legend-dot" style="background:${cat.color}"></span>
+        <span class="legend-glyph ${cls}">${cat.icon.options.html}</span>
+      </span>
+      <span>${cat.name}</span>
+    </div>
+  `;
+}).join("");
 
   // Start collapsed on mobile, expanded on desktop
   div.innerHTML = `
