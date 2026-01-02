@@ -1,8 +1,10 @@
 // PlayNoVA — map.js (ES5 safe)
-// Working version
+// - Always shows layer control (basemaps + overlays)
+// - Loads GeoJSON and adds category overlays after load
+// - Legend unchanged
+// - MAP markers: Font Awesome glyph + faint colored halo behind
 
 (function () {
-  // Run after page + deferred scripts load
   window.addEventListener('load', function () {
     if (!window.L) {
       console.error("Leaflet (L) is not available. Check leaflet.js script loading.");
@@ -54,10 +56,16 @@
     cartoLight.addTo(map);
 
     // 3) Helpers
+
+    // Map marker icon: halo + glyph, both colored via inline style.
     function makeMarkerIcon(categoryClass, faHtml, color) {
       return L.divIcon({
         className: 'leaflet-div-icon poi-icon ' + categoryClass,
-        html: '<span class="poi-fa" style="color:' + color + '">' + faHtml + '</span>',
+        html:
+          '<div class="poi-marker">' +
+            '<span class="poi-halo" style="background:' + color + '"></span>' +
+            '<span class="poi-fa" style="color:' + color + '">' + faHtml + '</span>' +
+          '</div>',
         iconSize: [18, 18],
         iconAnchor: [9, 9],
         popupAnchor: [0, -9]
@@ -69,7 +77,6 @@
       var s = p.sport || "";
       var txt = String(s);
 
-      // split by ; or , and trim
       var parts = txt.split(/[;,]+/);
       for (var i = 0; i < parts.length; i++) {
         if (String(parts[i]).trim() === val) return true;
@@ -145,7 +152,7 @@
 
     legend.addTo(map);
 
-    // 6) Layers control — always visible now
+    // 6) Layers control — always visible
     var overlays = {};
     var layersControl = L.control.layers(baseMaps, overlays, { collapsed: isMobile }).addTo(map);
 
