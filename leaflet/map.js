@@ -1,8 +1,5 @@
 // PlayNoVA — map.js (ES5 safe)
-// - Always shows layer control (basemaps + overlays)
-// - Loads GeoJSON and adds category overlays after load
-// - Legend unchanged
-// - Icons render as Font Awesome divIcons
+// Working version
 
 (function () {
   // Run after page + deferred scripts load
