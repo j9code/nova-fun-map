@@ -1,4 +1,4 @@
-/* Page fills the screen Working Version */
+/* Page fills the screen. Working version with halo added for map icons*/
 html, body {
   margin: 0;
   padding: 0;
@@ -47,30 +47,49 @@ body {
    Map icons (category-colored)
    ============================== */
 
-/* Remove Leaflet div icon white box/border */
+/* Remove Leaflet div icon default white box/border */
 .leaflet-div-icon.poi-icon {
   background: transparent;
   border: none;
 }
 
+/* Leaflet positions this outer div; keep it stable */
 .poi-icon {
   width: 18px;
   height: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: transparent;
   border: none;
   box-sizing: border-box;
-  text-align: center;
-  line-height: 1;
 }
 
+/* Inner marker layout (halo + glyph) */
+.poi-marker {
+  position: relative;
+  width: 18px;
+  height: 18px;
+}
+
+/* Faint colored circle behind the map icon (uses inline background from JS) */
+.poi-halo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  opacity: 0.18; /* a touch stronger than legend so it reads on basemaps */
+  pointer-events: none;
+}
+
+/* Center the injected Font Awesome glyph */
 .poi-fa {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   line-height: 1;
+  pointer-events: none;
 }
 
 .poi-fa i {
@@ -78,7 +97,7 @@ body {
   line-height: 1;
 }
 
-/* (Backup) Category colors */
+/* (Optional backup) Category colors if you ever want CSS-driven coloring too */
 .poi-icon.mini-golf i { color: #3DDC97; }
 .poi-icon.arcade i { color: #010200; }
 .poi-icon.trampoline i { color: #9A78E0; }
@@ -94,8 +113,9 @@ body {
 .poi-icon.water-park i { color: #78DDFF; }
 .poi-icon.zoo i { color: #D19636; }
 
+
 /* ==============================
-   Legend container  (UNCHANGED)
+   Legend container (DO NOT CHANGE)
    ============================== */
 .legend {
   background: rgba(255, 255, 255, 0.95);
