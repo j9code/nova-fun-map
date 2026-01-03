@@ -151,6 +151,25 @@
     };
 
     legend.addTo(map);
+    
+// adding hover
+    L.geoJSON(data, {
+  pointToLayer: function (feature, latlng) {
+    const marker = L.marker(latlng, {
+      icon: feature.icon
+    });
+
+    if (feature.properties && feature.properties.name) {
+      marker.bindTooltip(
+        `<strong>${feature.properties.name}</strong>`,
+        { sticky: true }
+      );
+    }
+
+    return marker;
+  }
+}).addTo(map);
+
 
     // 6) Layers control — always visible
     var overlays = {};
