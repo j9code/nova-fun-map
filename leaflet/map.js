@@ -87,7 +87,7 @@
     // 4) Categories
     var categories = [
       { name: "Mini Golf",          key: "mini-golf",   color: "#39ac73", fa: '<i class="fa-solid fa-golf-ball-tee"></i>',       filter: function (f) { return f.properties && f.properties.leisure === "miniature_golf"; } },
-      { name: "Amusement Centers",  key: "arcade",      color: "#8c1aff", fa: '<i class="fa-brands fa-fort-awesome"></i>',       filter: function (f) { return f.properties && f.properties.leisure === "amusement_arcade"; } },
+      { name: "Amusement Centers",  key: "arcade",      color: "#3e0775", fa: '<i class="fa-brands fa-fort-awesome"></i>',       filter: function (f) { return f.properties && f.properties.leisure === "amusement_arcade"; } },
       { name: "Trampoline Parks",   key: "trampoline",  color: "#2eb8b8", fa: '<i class="fa-solid fa-person-falling"></i>',      filter: function (f) { return f.properties && f.properties.leisure === "trampoline_park"; } },
       { name: "Laser Tag",          key: "laser",       color: "#e6005c", fa: '<i class="fa-solid fa-bullseye"></i>',            filter: function (f) { return sportHas(f, "laser_tag"); } },
       { name: "Indoor Playgrounds", key: "indoor-play", color: "#006699", fa: '<i class="fa-solid fa-child-reaching"></i>',      filter: function (f) { return f.properties && f.properties.leisure === "indoor_play"; } },
@@ -95,7 +95,7 @@
       { name: "Go Karts",           key: "karting",     color: "#4d4d4d", fa: '<i class="fa-solid fa-flag-checkered"></i>',      filter: function (f) { return sportHas(f, "karting"); } },
       { name: "Escape Rooms",       key: "escape",      color: "#336699", fa: '<i class="fa-solid fa-puzzle-piece"></i>',        filter: function (f) { return f.properties && f.properties.leisure === "escape_game"; } },
       { name: "Bowling",            key: "bowling",     color: "#4d4d4d", fa: '<i class="fa-solid fa-bowling-ball"></i>',         filter: function (f) { return f.properties && f.properties.leisure === "bowling_alley"; } },
-      { name: "Carousels",          key: "carousel",    color: "#e600e6", fa: '<i class="fa-solid fa-horse-head"></i>',           filter: function (f) { return f.properties && f.properties.attraction === "carousel"; } },
+      { name: "Carousels",          key: "carousel",    color: "#b505a6", fa: '<i class="fa-solid fa-horse-head"></i>',           filter: function (f) { return f.properties && f.properties.attraction === "carousel"; } },
       { name: "Miniature Trains",   key: "train",       color: "#cc2900", fa: '<i class="fa-solid fa-train"></i>',                filter: function (f) { return f.properties && f.properties.attraction === "train"; } },
       { name: "Animal Scooters",    key: "scooter",     color: "#996633", fa: '<i class="fa-solid fa-dragon"></i>',               filter: function (f) { return f.properties && f.properties.attraction === "animal_scooter"; } },
       { name: "Water Parks",        key: "water-park",  color: "#0000b3", fa: '<i class="fa-solid fa-water"></i>',                filter: function (f) { return f.properties && f.properties.leisure === "water_park"; } },
