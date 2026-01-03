@@ -1,8 +1,4 @@
-// PlayNoVA — map.js (ES5 safe)
-// - Always shows layer control (basemaps + overlays)
-// - Loads GeoJSON and adds category overlays after load
-// - Legend unchanged
-// - MAP markers: Font Awesome glyph + faint colored halo behind
+// with hover tooltip
 
 (function () {
   window.addEventListener('load', function () {
@@ -151,25 +147,6 @@
     };
 
     legend.addTo(map);
-    
-// adding hover
-    L.geoJSON(data, {
-  pointToLayer: function (feature, latlng) {
-    const marker = L.marker(latlng, {
-      icon: feature.icon
-    });
-
-    if (feature.properties && feature.properties.name) {
-      marker.bindTooltip(
-        `<strong>${feature.properties.name}</strong>`,
-        { sticky: true }
-      );
-    }
-
-    return marker;
-  }
-}).addTo(map);
-
 
     // 6) Layers control — always visible
     var overlays = {};
@@ -208,7 +185,19 @@
                   websiteLine = '<a href="' + website + '" target="_blank" rel="noopener noreferrer">Website</a>';
                 }
 
+                // Click popup
                 layer.bindPopup("<strong>" + name + "</strong><br>" + locationLine + websiteLine);
+
+                // Hover tooltip (same marker; ES5-safe)
+                var tooltipHtml = "<strong>" + name + "</strong>";
+                if (city || state) {
+                  tooltipHtml += "<br>" + city + (city && state ? ", " : "") + state;
+                }
+                layer.bindTooltip(tooltipHtml, {
+                  sticky: true,
+                  direction: "top",
+                  opacity: 0.95
+                });
               }
             });
 
