@@ -107,7 +107,7 @@
     }
 
     // 5) Legend (UNCHANGED structure/behavior)
-    var legend = L.control({ position: isMobile ? "bottomleft" : "topleft" });
+    var legend = L.control({ position: isMobile ? "topleft" : "topleft" });
 
     legend.onAdd = function () {
       var div = L.DomUtil.create("div", "legend");
