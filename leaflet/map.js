@@ -46,9 +46,7 @@
     var baseMaps = {
       "Light": cartoLight,
       "Voyager": cartoVoyager,
-     /* "Dark": cartoDark, */
-     /* "Imagery": esriImagery */
-    };
+     };
 
     cartoLight.addTo(map);
 
