@@ -228,3 +228,23 @@ body {
 .leaflet-tooltip-right:before {
   border: none;
 }
+
+/* Add this to the bottom of your CSS (styles the All/None buttons inside the Layers control) */
+.layers-bulk {
+  display: flex;
+  gap: 6px;
+  margin: 6px 0 8px 0;
+}
+
+.layers-bulk-btn {
+  border: 1px solid #bbb;
+  background: #fff;
+  border-radius: 8px;
+  padding: 4px 8px;
+  font: 12px/1 system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.layers-bulk-btn:hover {
+  background: #f2f2f2;
+}
