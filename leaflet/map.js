@@ -31,7 +31,7 @@
       subdomains: 'abcd',
       maxZoom: 20
     });
-
+/* 
     var cartoDark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
       attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
       subdomains: 'abcd',
@@ -42,12 +42,12 @@
       'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
       { attribution: 'Tiles &copy; Esri', maxZoom: 19 }
     );
-
+*/
     var baseMaps = {
       "Light": cartoLight,
       "Voyager": cartoVoyager,
-      "Dark": cartoDark,
-      "Imagery": esriImagery
+     /* "Dark": cartoDark, */
+     /* "Imagery": esriImagery */
     };
 
     cartoLight.addTo(map);
