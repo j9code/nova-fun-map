@@ -1,4 +1,5 @@
-// with hover tooltip
+// PlayNoVA — map.js (ES5 safe)
+
 
 (function () {
   window.addEventListener('load', function () {
@@ -53,7 +54,6 @@
 
     // 3) Helpers
 
-    // Map marker icon: halo + glyph, both colored via inline style.
     function makeMarkerIcon(categoryClass, faHtml, color) {
       return L.divIcon({
         className: 'leaflet-div-icon poi-icon ' + categoryClass,
@@ -102,7 +102,7 @@
       categories[c].markerIcon = makeMarkerIcon(categories[c].key, categories[c].fa, categories[c].color);
     }
 
-    // 5) Legend (UNCHANGED structure/behavior)
+    // 5) Legend (UNCHANGED)
     var legend = L.control({ position: isMobile ? "topleft" : "topleft" });
 
     legend.onAdd = function () {
@@ -149,8 +149,64 @@
     legend.addTo(map);
 
     // 6) Layers control — always visible
-    var overlays = {};
+    var overlays = {};        // name -> layer
+    var overlayList = [];     // ordered list of overlay layers for All/None
     var layersControl = L.control.layers(baseMaps, overlays, { collapsed: isMobile }).addTo(map);
+
+    function refreshLayersControlUI() {
+      // Leaflet updates itself via map events, but calling _update ensures checkbox sync immediately.
+      if (layersControl && layersControl._update) {
+        try { layersControl._update(); } catch (e) {}
+      }
+    }
+
+    function addAllNoneButtonsInsideLayersControl() {
+      var container = layersControl.getContainer();
+      if (!container) return;
+
+      // Avoid duplicates
+      if (container.querySelector(".layers-bulk")) return;
+
+      // Find the overlays list inside the control (where overlay checkboxes live)
+      var overlaysList = container.querySelector(".leaflet-control-layers-overlays");
+      if (!overlaysList) return;
+
+      var bulk = L.DomUtil.create("div", "layers-bulk");
+      bulk.innerHTML =
+        '<button type="button" class="layers-bulk-btn layers-bulk-all">All</button>' +
+        '<button type="button" class="layers-bulk-btn layers-bulk-none">None</button>';
+
+      // Put buttons ABOVE overlay checkboxes
+      overlaysList.parentNode.insertBefore(bulk, overlaysList);
+
+      // Stop clicks from closing the control / dragging map
+      L.DomEvent.disableClickPropagation(bulk);
+      L.DomEvent.disableScrollPropagation(bulk);
+
+      var allBtn = bulk.querySelector(".layers-bulk-all");
+      var noneBtn = bulk.querySelector(".layers-bulk-none");
+
+      allBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        for (var i = 0; i < overlayList.length; i++) {
+          if (!map.hasLayer(overlayList[i])) map.addLayer(overlayList[i]);
+        }
+        refreshLayersControlUI();
+      });
+
+      noneBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        for (var i = 0; i < overlayList.length; i++) {
+          if (map.hasLayer(overlayList[i])) map.removeLayer(overlayList[i]);
+        }
+        refreshLayersControlUI();
+      });
+    }
+
+    // Add the buttons immediately (they'll sit there even before overlays exist)
+    addAllNoneButtonsInsideLayersControl();
 
     // 7) Load GeoJSON + add overlays
     var geojsonUrl = 'data/novafunmap_12.31.25.geojson';
@@ -188,7 +244,7 @@
                 // Click popup
                 layer.bindPopup("<strong>" + name + "</strong><br>" + locationLine + websiteLine);
 
-                // Hover tooltip (same marker; ES5-safe)
+                // Hover tooltip
                 var tooltipHtml = "<strong>" + name + "</strong>";
                 if (city || state) {
                   tooltipHtml += "<br>" + city + (city && state ? ", " : "") + state;
@@ -201,10 +257,26 @@
               }
             });
 
+            // Register overlay with the built-in layers control
             overlays[cat.name] = layer;
             layersControl.addOverlay(layer, cat.name);
+
+            // Track for bulk actions
+            overlayList.push(layer);
+
           })(categories[k]);
         }
+
+        // Ensure our buttons stay positioned correctly above overlays
+        addAllNoneButtonsInsideLayersControl();
+        refreshLayersControlUI();
+
+        // Optional: start with ALL categories enabled.
+        // Comment this out if you want them initially OFF.
+        for (var i = 0; i < overlayList.length; i++) {
+          map.addLayer(overlayList[i]);
+        }
+        refreshLayersControlUI();
 
         if (isMobile) {
           setTimeout(function () { map.invalidateSize(); }, 200);
