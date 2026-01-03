@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "generator": "overpass-turbo",
   "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
-  "timestamp": "2026-01-01T02:47:05Z",
+  "timestamp": "2026-01-03T21:26:35Z",
   "features": [
     {
       "type": "Feature",
@@ -943,9 +943,14 @@
       "type": "Feature",
       "properties": {
         "@id": "way/1361479356",
+        "addr:city": "Lorton",
+        "addr:postcode": "22079",
+        "addr:state": "VA",
+        "addr:street": "Pohick Bay Drive",
         "leisure": "water_park",
         "name": "Pirate's Cove Waterpark",
         "operator": "Northern Virginia Regional Park Authority",
+        "website": "https://www.novaparks.com/waterparks/pirates-cove-waterpark",
         "@geometry": "center"
       },
       "geometry": {
@@ -1840,6 +1845,7 @@
       "type": "Feature",
       "properties": {
         "@id": "node/13368009961",
+        "addr:city": "Sterling",
         "addr:housenumber": "21100",
         "addr:postcode": "20166",
         "addr:state": "VA",
