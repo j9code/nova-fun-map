@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "generator": "overpass-turbo",
   "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
-  "timestamp": "2026-01-03T21:26:35Z",
+  "timestamp": "2026-01-07T03:35:25Z",
   "features": [
     {
       "type": "Feature",
@@ -297,6 +297,27 @@
         ]
       },
       "id": "way/107701997"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/121176239",
+        "addr:city": "Oakton",
+        "addr:state": "VA",
+        "leisure": "miniature_golf",
+        "name": "Oak Marr Mini Golf",
+        "source": "bing",
+        "website": "https://www.fairfaxcounty.gov/parks/golf/oak-marr/minigolf",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.3152449,
+          38.875518
+        ]
+      },
+      "id": "way/121176239"
     },
     {
       "type": "Feature",
@@ -713,7 +734,7 @@
         "addr:city": "Springfield",
         "addr:state": "VA",
         "leisure": "miniature_golf",
-        "name": "Lake Accotink Lucky Duck Miniature Golf",
+        "name": "Lucky Duck Miniature Golf",
         "website": "https://www.fairfaxcounty.gov/parks/Lake-Accotink/minigolf",
         "@geometry": "center"
       },
@@ -1274,6 +1295,26 @@
         ]
       },
       "id": "node/4205213237"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4838836469",
+        "addr:city": "Springfield",
+        "addr:state": "VA",
+        "attraction": "carousel",
+        "name": "Lake Accotink Carousel",
+        "tourism": "attraction",
+        "website": "https://www.fairfaxcounty.gov/parks/lake-accotink/carousel"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.2153823,
+          38.7943317
+        ]
+      },
+      "id": "node/4838836469"
     },
     {
       "type": "Feature",
@@ -2448,11 +2489,14 @@
       "type": "Feature",
       "properties": {
         "@id": "node/13419083422",
+        "addr:city": "Arlington",
         "addr:floor": "2",
+        "addr:state": "VA",
         "check_date": "2025-12-30",
         "leisure": "escape_game",
         "level": "2",
-        "name": "Bond’s Escape Room"
+        "name": "Bond’s Escape Room",
+        "website": "https://bondsescaperoom.com/"
       },
       "geometry": {
         "type": "Point",
@@ -2522,6 +2566,66 @@
         ]
       },
       "id": "node/13422403247"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13436804975",
+        "addr:city": "Fairfax",
+        "addr:housenumber": "4211",
+        "addr:state": "VA",
+        "addr:street": "Fairfax Corner East Avenue",
+        "leisure": "escape_game",
+        "website": "https://www.escapology.com/en/fairfax-va"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.3559138,
+          38.8585861
+        ]
+      },
+      "id": "node/13436804975"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13436842073",
+        "addr:city": "Fairfax",
+        "addr:state": "VA",
+        "addr:street": "Main Street",
+        "leisure": "indoor_play",
+        "name": "Jolly Yolly Kids",
+        "website": "https://www.jollyyollykids.com/fairfax/index.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.3236227,
+          38.8521581
+        ]
+      },
+      "id": "node/13436842073"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13436879988",
+        "addr:city": "McLean",
+        "addr:state": "VA",
+        "leisure": "bowling_alley",
+        "name": "Lucky Strike Tysons Corner",
+        "sport": "10pin",
+        "website": "https://www.luckystrikeent.com/location/lucky-strike-tysons-corner"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.224786,
+          38.9243203
+        ]
+      },
+      "id": "node/13436879988"
     }
   ]
 }
