@@ -271,7 +271,7 @@
 
         // Optional: start with ALL categories enabled.
         // Comment this out if you want them initially OFF.
-    */    for (var i = 0; i < overlayList.length; i++) {
+    /*    for (var i = 0; i < overlayList.length; i++) {
           map.addLayer(overlayList[i]);
         } 
     */
