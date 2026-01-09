@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "generator": "overpass-turbo",
   "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
-  "timestamp": "2026-01-07T03:35:25Z",
+  "timestamp": "2026-01-09T04:35:55Z",
   "features": [
     {
       "type": "Feature",
@@ -1700,7 +1700,9 @@
         "addr:state": "VA",
         "addr:street": "Golansky Boulevard",
         "leisure": "amusement_arcade",
-        "name": "Team Tactics"
+        "name": "Team Tactics",
+        "sport": "laser_tag",
+        "website": "https://teamtactics.us/"
       },
       "geometry": {
         "type": "Point",
