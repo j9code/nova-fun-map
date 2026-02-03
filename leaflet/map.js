@@ -207,7 +207,7 @@
     addAllNoneButtonsInsideLayersControl();
 
     // 7) Load GeoJSON + add overlays
-    var geojsonUrl = 'data/novafunmap_12.31.25.geojson';
+    var geojsonUrl = 'data/novafunmap.geojson';
 
     fetch(geojsonUrl)
       .then(function (r) {
