@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "generator": "overpass-turbo",
   "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
-  "timestamp": "2026-02-03T23:44:16Z",
+  "timestamp": "2026-02-05T03:09:04Z",
   "features": [
     {
       "type": "Feature",
@@ -2632,6 +2632,46 @@
         ]
       },
       "id": "node/13436879988"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13525389043",
+        "addr:city": "Tysons",
+        "addr:state": "VA",
+        "leisure": "amusement_arcade",
+        "name": "Sandbox VR",
+        "virtual_reality": "yes",
+        "website": "https://sandboxvr.com/mclean"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.2327991,
+          38.9243537
+        ]
+      },
+      "id": "node/13525389043"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13525417774",
+        "arcade_game": "skeeball;driving;shooting",
+        "leisure": "amusement_arcade",
+        "name": "Corner Pocket",
+        "sport": "billiards;table_tennis;table_soccer",
+        "virtual_reality": "yes",
+        "website": "https://studentcenters.gmu.edu/corner-pocket/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.3055381,
+          38.8307934
+        ]
+      },
+      "id": "node/13525417774"
     }
   ]
 }
