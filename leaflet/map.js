@@ -81,7 +81,7 @@
     // 4) Categories
     var categories = [
       { name: "Mini Golf",          key: "mini-golf",   color: "#39ac73", fa: '<i class="fa-solid fa-golf-ball-tee"></i>',       filter: function (f) { return f.properties && f.properties.leisure === "miniature_golf"; } },
-      { name: "Amusement Centers",  key: "arcade",      color: "#3e0775", fa: '<i class="<i class="fa-solid fa-gamepad"></i>',   filter: function (f) { return f.properties && f.properties.leisure === "amusement_arcade"; } },
+      { name: "Amusement Centers",  key: "arcade",      color: "#3e0775", fa: '<i class="fa-solid fa-gamepad"></i>',             filter: function (f) { return f.properties && f.properties.leisure === "amusement_arcade"; } },
       { name: "Trampoline Parks",   key: "trampoline",  color: "#2eb8b8", fa: '<i class="fa-solid fa-person-falling"></i>',      filter: function (f) { return f.properties && f.properties.leisure === "trampoline_park"; } },
       { name: "Laser Tag",          key: "laser",       color: "#e6005c", fa: '<i class="fa-solid fa-bullseye"></i>',            filter: function (f) { return sportHas(f, "laser_tag"); } },
       { name: "Indoor Playgrounds", key: "indoor-play", color: "#006699", fa: '<i class="fa-solid fa-child-reaching"></i>',      filter: function (f) { return f.properties && f.properties.leisure === "indoor_play"; } },
