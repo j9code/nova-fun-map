@@ -255,3 +255,17 @@ body {
 .layers-bulk-btn:hover {
   background: #f2f2f2;
 }
+
+/* Leaflet Layers control – match legend font */
+.leaflet-control-layers {
+  font: 12px/1 system-ui, sans-serif;
+}
+
+.leaflet-control-layers label {
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.leaflet-control-layers span {
+  font-size: 12px;
+}
