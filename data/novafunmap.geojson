@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "generator": "overpass-turbo",
   "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
-  "timestamp": "2026-02-06T02:41:57Z",
+  "timestamp": "2026-02-06T03:50:20Z",
   "features": [
     {
       "type": "Feature",
@@ -2722,6 +2722,52 @@
         ]
       },
       "id": "node/13527659823"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13527733954",
+        "addr:city": "Annandale",
+        "addr:state": "VA",
+        "gaming_lounge": "video_games",
+        "leisure": "gaming_lounge",
+        "name": "HunterM Gaming & ESports Center",
+        "phone": "+1-703-750-0450",
+        "website": "https://huntermgaming.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.1892994,
+          38.8280271
+        ]
+      },
+      "id": "node/13527733954"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13527734295",
+        "addr:city": "Centreville",
+        "addr:housenumber": "13810",
+        "addr:postcode": "20121",
+        "addr:state": "VA",
+        "addr:street": "Braddock Road",
+        "addr:unit": "B",
+        "gaming_lounge": "video_games",
+        "leisure": "gaming_lounge",
+        "name": "iBattle Gaming & ESports Center",
+        "phone": "+1-703-547-7172",
+        "website": "https://ibattlegaming.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.4274088,
+          38.8384726
+        ]
+      },
+      "id": "node/13527734295"
     }
   ]
 }
