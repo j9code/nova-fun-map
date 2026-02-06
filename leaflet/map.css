@@ -110,7 +110,7 @@ body {
 /* Optional CSS-driven colors (JS inline styles win) */
 .poi-icon.mini-golf i   { color: #39ac73; } /* green */
 .poi-icon.arcade i      { color: #995cd6; } /* purple */
-.poi-icon.gaming i      { color: #995cd6; } /* purple */
+.poi-icon.gaming i      { color: #4d4d4d; } /* purple */
 .poi-icon.trampoline i  { color: #2eb8b8; } /* teal */
 .poi-icon.laser i       { color: #e6005c; } /* fuchsia */
 .poi-icon.indoor-play i { color: #006699; } /* dark blue */
