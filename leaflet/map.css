@@ -256,16 +256,15 @@ body {
   background: #f2f2f2;
 }
 
-/* Leaflet Layers control – match legend font */
+/* Leaflet Layers control – match legend text exactly */
 .leaflet-control-layers {
-  font: 12px/1 system-ui, sans-serif;
-}
-
-.leaflet-control-layers label {
+  font-family: system-ui, sans-serif;
   font-size: 12px;
-  line-height: 1.2;
+  line-height: 1.3;
 }
 
+.leaflet-control-layers label,
 .leaflet-control-layers span {
   font-size: 12px;
+  line-height: 1.3;
 }
