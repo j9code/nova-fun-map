@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "generator": "overpass-turbo",
   "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
-  "timestamp": "2026-02-05T03:09:04Z",
+  "timestamp": "2026-02-06T02:41:57Z",
   "features": [
     {
       "type": "Feature",
@@ -1418,6 +1418,30 @@
     {
       "type": "Feature",
       "properties": {
+        "@id": "node/6254327443",
+        "addr:city": "Sterling",
+        "addr:country": "US",
+        "addr:housenumber": "45685",
+        "addr:postcode": "20166",
+        "addr:state": "VA",
+        "addr:street": "Oakbrook Court",
+        "addr:unit": "110",
+        "leisure": "trampoline_park",
+        "name": "ZavaZone",
+        "website": "https://www.zavazone.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.4187994,
+          39.0094524
+        ]
+      },
+      "id": "node/6254327443"
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "@id": "node/6338152056",
         "addr:city": "Fairfax",
         "addr:housenumber": "9404",
@@ -2672,6 +2696,32 @@
         ]
       },
       "id": "node/13525417774"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13527659823",
+        "addr:city": "Ashburn",
+        "addr:country": "US",
+        "addr:housenumber": "44933",
+        "addr:postcode": "20147",
+        "addr:state": "VA",
+        "addr:street": "George Washington Boulevard",
+        "addr:unit": "155",
+        "gaming_lounge": "video_games",
+        "leisure": "gaming_lounge",
+        "name": "The Outer Limits",
+        "phone": "703-729-4768",
+        "website": "https://www.theouterlimitsva.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.445346,
+          39.0579076
+        ]
+      },
+      "id": "node/13527659823"
     }
   ]
 }
