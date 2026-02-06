@@ -131,7 +131,7 @@ body {
   padding: 10px 12px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  font: 14px/1.2 system-ui, sans-serif;
+  font: 12px/1 system-ui, sans-serif;
   box-shadow: 0 1px 6px rgba(0,0,0,0.15);
   max-height: 60vh;
   overflow-y: auto;
