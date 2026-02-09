@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "generator": "overpass-turbo",
   "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
-  "timestamp": "2026-02-09T04:08:34Z",
+  "timestamp": "2026-02-09T22:18:45Z",
   "features": [
     {
       "type": "Feature",
@@ -882,7 +882,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -77.1432482,
+          -77.1432351,
           38.8714884
         ]
       },
@@ -939,6 +939,7 @@
         "addr:city": "Woodbridge",
         "addr:housenumber": "2700",
         "addr:postcode": "22192",
+        "addr:state": "VA",
         "addr:street": "Potomac Mills Circle",
         "arcade_game": "claw",
         "brand": "Round1",
@@ -2794,6 +2795,54 @@
         ]
       },
       "id": "node/13535669600"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13538911034",
+        "addr:city": "Franconia",
+        "addr:country": "US",
+        "addr:housenumber": "7005",
+        "addr:postcode": "22310",
+        "addr:state": "VA",
+        "addr:street": "Manchester Boulevard",
+        "addr:unit": "Suite 10B",
+        "leisure": "indoor_play",
+        "name": "Hyper Kidz Alexandria",
+        "phone": "+1 703-936-2505",
+        "website": "https://alexandria.hyperkidzplay.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.154329,
+          38.7665278
+        ]
+      },
+      "id": "node/13538911034"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13538942606",
+        "addr:city": "Springfield",
+        "addr:housenumber": "6563",
+        "addr:postcode": "22150",
+        "addr:state": "VA",
+        "addr:street": "Springfield Mall",
+        "addr:unit": "Suite 12004",
+        "leisure": "indoor_play",
+        "name": "Lego Discovery Center",
+        "website": "https://www.legodiscoverycenter.com/washington-dc/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.174831,
+          38.774894
+        ]
+      },
+      "id": "node/13538942606"
     }
   ]
 }
