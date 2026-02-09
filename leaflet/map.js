@@ -94,6 +94,7 @@
       { name: "Miniature Trains",   key: "train",       color: "#cc2900", fa: '<i class="fa-solid fa-train"></i>',                filter: function (f) { return f.properties && f.properties.attraction === "train"; } },
       { name: "Animal Scooters",    key: "scooter",     color: "#996633", fa: '<i class="fa-solid fa-dragon"></i>',               filter: function (f) { return f.properties && f.properties.attraction === "animal_scooter"; } },
       { name: "Water Parks",        key: "water-park",  color: "#0000b3", fa: '<i class="fa-solid fa-water"></i>',                filter: function (f) { return f.properties && f.properties.leisure === "water_park"; } },
+      { name: "Indoor Sky Diving",  key: "skydive",     color: "#6F8FAF", fa: '<i class="fa-solid fa-wind"></i>',                filter: function (f) { return sportHas(f, "indoor_skydiving"); } },
       { name: "Animal Parks",       key: "zoo",         color: "#663300", fa: '<i class="fa-solid fa-paw"></i>',                  filter: function (f) { return f.properties && f.properties.tourism === "zoo"; } }
     ];
 
