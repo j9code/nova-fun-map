@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "generator": "overpass-turbo",
   "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
-  "timestamp": "2026-02-09T22:18:45Z",
+  "timestamp": "2026-02-09T22:47:29Z",
   "features": [
     {
       "type": "Feature",
@@ -24,6 +24,30 @@
         ]
       },
       "id": "way/43599019"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/44622489",
+        "addr:city": "Reston",
+        "addr:housenumber": "1800",
+        "addr:postcode": "20190",
+        "addr:state": "VA",
+        "addr:street": "Michael Faraday Court",
+        "building": "yes",
+        "leisure": "sports_centre",
+        "name": "Skatequest Ice Rinks",
+        "sport": "ice_skating",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.3309862,
+          38.9494884
+        ]
+      },
+      "id": "way/44622489"
     },
     {
       "type": "Feature",
@@ -229,6 +253,30 @@
     {
       "type": "Feature",
       "properties": {
+        "@id": "way/69547096",
+        "building": "roof",
+        "building:levels": "2",
+        "leisure": "ice_rink",
+        "name": "Reston Town Center Pavilion",
+        "operator": "Boston Properties",
+        "roof:material": "glass",
+        "seasonal": "yes",
+        "source": "Reston Town Center Map",
+        "sport": "ice_hockey;ice_skating",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.3569078,
+          38.9583654
+        ]
+      },
+      "id": "way/69547096"
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "@id": "way/78343475",
         "addr:city": "Fairfax",
         "addr:state": "VA",
@@ -277,6 +325,26 @@
         ]
       },
       "id": "way/94046207"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/95048277",
+        "building": "yes",
+        "leisure": "sports_centre",
+        "name": "Prince William Ice Center",
+        "sport": "ice_hockey;ice_skating",
+        "website": "https://www.pwice.com/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.3627149,
+          38.6605873
+        ]
+      },
+      "id": "way/95048277"
     },
     {
       "type": "Feature",
@@ -530,6 +598,35 @@
     {
       "type": "Feature",
       "properties": {
+        "@id": "way/228620206",
+        "addr:housenumber": "2017",
+        "addr:postcode": "22307",
+        "addr:state": "VA",
+        "addr:street": "Belle View Boulevard",
+        "building": "commercial",
+        "ele": "6",
+        "fee": "yes",
+        "gnis:feature_id": "1491800",
+        "leisure": "sports_centre",
+        "name": "Mount Vernon Rec Center",
+        "opening_hours": "Mo-Fr 07:00-19:00; Sa 07:00-18:00; Su 08:00-18:00",
+        "source": "USGS Geonames",
+        "sport": "multi;swimming;ice_hockey;ice_skating;climbing",
+        "website": "https://www.fairfaxcounty.gov/parks/reccenter/mount-vernon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0634771,
+          38.7742797
+        ]
+      },
+      "id": "way/228620206"
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "@id": "way/230519771",
         "addr:city": "Manassas Park",
         "addr:housenumber": "9300",
@@ -569,6 +666,35 @@
         ]
       },
       "id": "way/232410906"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/233086804",
+        "addr:city": "Fairfax",
+        "addr:housenumber": "3779",
+        "addr:postcode": "22031",
+        "addr:state": "VA",
+        "addr:street": "Pickett Road",
+        "building": "yes",
+        "ele": "125",
+        "gnis:feature_id": "1491874",
+        "leisure": "ice_rink",
+        "name": "Fairfax Ice Arena",
+        "seasonal": "no",
+        "source": "Bing;USGS Geonames",
+        "sport": "ice_skating;ice_hockey",
+        "website": "https://www.fairfaxicearena.com/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.2724088,
+          38.8486798
+        ]
+      },
+      "id": "way/233086804"
     },
     {
       "type": "Feature",
@@ -672,6 +798,31 @@
     {
       "type": "Feature",
       "properties": {
+        "@id": "way/284323527",
+        "addr:city": "Purcellville",
+        "addr:housenumber": "250",
+        "addr:postcode": "20132",
+        "addr:state": "VA",
+        "addr:street": "South Nursery Avenue",
+        "building": "yes",
+        "leisure": "sports_centre",
+        "name": "Bush Tabernacle Skating Rink",
+        "source": "Loudoun County GIS data",
+        "sport": "roller_skating",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.7149077,
+          39.1340857
+        ]
+      },
+      "id": "way/284323527"
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "@id": "way/304386194",
         "addr:city": "Leesburg",
         "addr:state": "VA",
@@ -766,6 +917,63 @@
         ]
       },
       "id": "way/520844611"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/597976244",
+        "addr:city": "Arlington",
+        "addr:housenumber": "627",
+        "addr:postcode": "22203",
+        "addr:state": "VA",
+        "addr:street": "North Glebe Road",
+        "addr:unit": "800",
+        "building:levels": "8",
+        "building:part": "yes",
+        "leisure": "ice_rink",
+        "level": "7",
+        "name": "MedStar Capitals Iceplex",
+        "phone": "+1 571-224-0555",
+        "seasonal": "no",
+        "sport": "ice_skating;ice_hockey",
+        "website": "https://www.medstarcapitalsiceplex.com/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.1101546,
+          38.8787884
+        ]
+      },
+      "id": "way/597976244"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/690940469",
+        "addr:city": "Leesburg",
+        "addr:housenumber": "19201",
+        "addr:postcode": "20175",
+        "addr:state": "VA",
+        "addr:street": "Compass Creek Parkway SE",
+        "building": "commercial",
+        "leisure": "ice_rink",
+        "name": "ION International Training Center",
+        "note": "Opening on June 15, 2019",
+        "source": "https://www.theburn.com/2019/05/05/ion-skating-center-grand-opening-june-15-16/",
+        "sport": "ice_skating",
+        "website": "https://ionitc.com/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.5650062,
+          39.0854517
+        ]
+      },
+      "id": "way/690940469"
     },
     {
       "type": "Feature",
@@ -1490,6 +1698,24 @@
         ]
       },
       "id": "node/6561561425"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6993933259",
+        "leisure": "ice_rink",
+        "name": "Harris Pavilion Skate Rink Office-Winter Only",
+        "seasonal": "yes",
+        "sport": "ice_skating"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.4741236,
+          38.7503467
+        ]
+      },
+      "id": "node/6993933259"
     },
     {
       "type": "Feature",
