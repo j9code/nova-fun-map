@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "generator": "overpass-turbo",
   "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
-  "timestamp": "2026-02-09T22:47:29Z",
+  "timestamp": "2026-02-11T16:35:59Z",
   "features": [
     {
       "type": "Feature",
@@ -1703,16 +1703,21 @@
       "type": "Feature",
       "properties": {
         "@id": "node/6993933259",
+        "addr:city": "Manassas",
+        "addr:postcode": "20110",
+        "addr:state": "VA",
+        "addr:street": "Center Street",
         "leisure": "ice_rink",
-        "name": "Harris Pavilion Skate Rink Office-Winter Only",
+        "name": "Harris Pavilion Ice Rink",
         "seasonal": "yes",
-        "sport": "ice_skating"
+        "sport": "ice_skating",
+        "website": "https://www.manassasva.gov/parks_culture_and_recreation/ice_skating.php"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -77.4741236,
-          38.7503467
+          -77.4738178,
+          38.7505527
         ]
       },
       "id": "node/6993933259"
@@ -3069,6 +3074,26 @@
         ]
       },
       "id": "node/13538942606"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13543780794",
+        "addr:city": "Dulles",
+        "addr:state": "VA",
+        "leisure": "trampoline_park",
+        "name": "Sky Zone Dulles",
+        "phone": "+1 703-688-2122",
+        "website": "https://www.skyzone.com/dulles-town-center-va/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.4259255,
+          39.0329726
+        ]
+      },
+      "id": "node/13543780794"
     }
   ]
 }
