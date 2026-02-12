@@ -88,6 +88,7 @@
       { name: "Climbing Parks",     key: "climbing",    color: "#e68a00", fa: '<i class="fa-solid fa-person-walking"></i>',      filter: function (f) { return sportHas(f, "climbing_adventure"); } },
       { name: "Escape Rooms",       key: "escape",      color: "#336699", fa: '<i class="fa-solid fa-puzzle-piece"></i>',        filter: function (f) { return f.properties && f.properties.leisure === "escape_game"; } },
       { name: "Gaming Lounge",      key: "gaming",      color: "#4d4d4d", fa: '<i class="fa-solid fa-gamepad"></i>',             filter: function (f) { return f.properties && f.properties.leisure === "gaming_lounge"; } },     
+      { name: "Go Karts",           key: "karting",     color: "#4d4d4d", fa: '<i class="fa-solid fa-flag-checkered"></i>',      filter: function (f) { return sportHas(f, "karting"); } },
       { name: "Indoor Playgrounds", key: "indoor-play", color: "#006699", fa: '<i class="fa-solid fa-child-reaching"></i>',      filter: function (f) { return f.properties && f.properties.leisure === "indoor_play"; } },
       { name: "Indoor Sky Diving",  key: "skydive",     color: "#6F8FAF", fa: '<i class="fa-solid fa-wind"></i>',                filter: function (f) { return sportHas(f, "indoor_skydiving"); } },
       { name: "Laser Tag",          key: "laser",       color: "#e6005c", fa: '<i class="fa-solid fa-bullseye"></i>',            filter: function (f) { return sportHas(f, "laser_tag"); } },
