@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "generator": "overpass-turbo",
   "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
-  "timestamp": "2026-02-11T16:35:59Z",
+  "timestamp": "2026-02-12T03:10:52Z",
   "features": [
     {
       "type": "Feature",
@@ -254,6 +254,8 @@
       "type": "Feature",
       "properties": {
         "@id": "way/69547096",
+        "addr:city": "Reston",
+        "addr:state": "VA",
         "building": "roof",
         "building:levels": "2",
         "leisure": "ice_rink",
@@ -262,7 +264,8 @@
         "roof:material": "glass",
         "seasonal": "yes",
         "source": "Reston Town Center Map",
-        "sport": "ice_hockey;ice_skating",
+        "sport": "ice_skating",
+        "website": "https://www.restontowncenter.com/skating",
         "@geometry": "center"
       },
       "geometry": {
@@ -599,6 +602,7 @@
       "type": "Feature",
       "properties": {
         "@id": "way/228620206",
+        "addr:city": "Alexandria",
         "addr:housenumber": "2017",
         "addr:postcode": "22307",
         "addr:state": "VA",
@@ -809,6 +813,7 @@
         "name": "Bush Tabernacle Skating Rink",
         "source": "Loudoun County GIS data",
         "sport": "roller_skating",
+        "website": "https://www.bushtabernacle.com/",
         "@geometry": "center"
       },
       "geometry": {
@@ -3081,8 +3086,11 @@
         "@id": "node/13543780794",
         "addr:city": "Dulles",
         "addr:state": "VA",
+        "branch": "Dulles",
+        "brand": "Sky Zone",
+        "brand:wikidata": "Q7537557",
         "leisure": "trampoline_park",
-        "name": "Sky Zone Dulles",
+        "name": "Sky Zone",
         "phone": "+1 703-688-2122",
         "website": "https://www.skyzone.com/dulles-town-center-va/"
       },
