@@ -127,7 +127,7 @@ body {
 .poi-icon.skating i     { color: #0da9b8; } /* confident seas */
 
 /* =========================================
-   Legend (OPAQUE + STABLE)
+   Legend 
    ========================================= */
 .legend {
   padding: 10px 12px;
@@ -184,12 +184,31 @@ body {
   display: none;
 }
 
+/* =========================================
+   Mobile Setup 
+   ========================================= */
+
 @media (max-width: 768px) {
   .legend {
-    width: min(260px, 88vw);
+    width: auto;
+    max-width: 82vw
     max-height: 40vh;
+    box-sizing: border-box;
     overflow-y: auto;
     font-size: 13px;
+  }
+}
+
+  /* allow long category names to wrap instead of expanding legend */
+  .legend-item {
+    align-items: flex-start;
+  }
+
+  .legend-item span:last-child {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow-wrap: anywhere;  /* wraps long words/names */
+    word-break: break-word;
   }
 }
 
@@ -238,7 +257,7 @@ body {
   border: none;
 }
 
-/* Add this to the bottom of your CSS (styles the All/None buttons inside the Layers control) */
+/* Styles the All/None buttons inside the Layers control */
 .layers-bulk {
   display: flex;
   gap: 6px;
