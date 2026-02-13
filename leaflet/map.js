@@ -16,7 +16,14 @@
     }
 
     // 1) Map
-    var map = L.map('map').setView([38.95, -77.35], 10);
+    var map = L.map('map', {
+      zoomControl:false
+    }).setView([38.95, -77.35], 10);
+
+    L.control.zoom({
+      position: 'bottomleft'
+    }).addTo(map);
+
 
     // 2) Basemaps
     var cartoLight = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
