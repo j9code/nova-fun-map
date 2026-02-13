@@ -1,5 +1,5 @@
 # Project: NoVa Fun Map
-Mapping amusements, attractions, and family-friendly fun across Northern Virginia using OpenStreetMap data, Overpass API, and Leaflet.
+Mapping amusements, attractions, and family-friendly fun across Northern Virginia using OpenStreetMap data, Overpass API, and Leaflet. Many thanks to M. Wildon for sharing the <a href="https://github.com/watmildon/microcosm">microcosm<a/> template for fetching the data . 
 
 <a href="https://j9code.github.io/nova-fun-map">NoVa Fun Map</a>
 
