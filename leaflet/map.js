@@ -245,7 +245,8 @@
                 // Click popup
                 layer.bindPopup("<strong>" + name + "</strong><br>" + locationLine + websiteLine);
 
-                // Hover tooltip
+                // Hover tooltip for desktop, otherwise creates a shadow tooltip on mobile
+              if (!isMobile) {
                 var tooltipHtml = "<strong>" + name + "</strong>";
                 if (city || state) {
                   tooltipHtml += "<br>" + city + (city && state ? ", " : "") + state;
