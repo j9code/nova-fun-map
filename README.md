@@ -3,6 +3,9 @@ Mapping amusements, attractions, and family-friendly fun across Northern Virgini
 
 <a href="https://j9code.github.io/nova-fun-map">NoVa Fun Map</a>
 
+![PlayNoVA Map Screenshot](images/PlayNoVA.jpg)
+
+
 ## Overview
 This project demonstrates how to create and share an interactive map using OpenStreetMap data, with documented data sourcing, tagging decisions, and cartographic choices.  
 It brings together:
