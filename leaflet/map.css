@@ -28,9 +28,9 @@ body {
 }
 
 .header p {
-  font-size: 0.8rem;   
+  font-size: 0.8rem;
   line-height: 1.3;
-  color: #555;         
+  color: #555;
 }
 
 /* =========================================
@@ -90,9 +90,10 @@ body {
   border-radius: 50%;
   opacity: 0.18;
   pointer-events: none;
+  border: 1px solid rgba(0,0,0,0.05);
 }
 
-/* Font Awesome glyph */
+/* Font Awesome glyph wrapper */
 .poi-fa {
   position: absolute;
   left: 50%;
@@ -105,29 +106,32 @@ body {
 .poi-fa i {
   font-size: 16px;
   line-height: 1;
+  color: #2f2f2f; /* Professional touch: neutral charcoal */
 }
 
-/* Optional CSS-driven colors (JS inline styles win) */
-.poi-icon.mini-golf i   { color: #537f69; } /* green */
-.poi-icon.arcade i      { color: #d57345; } /*  */
-.poi-icon.gaming i      { color: #4d4d4d; } /* purple */
-.poi-icon.trampoline i  { color: #a8a563; } /* teal */
-.poi-icon.laser i       { color: #6acc99; } /*  */
-.poi-icon.indoor-play i { color: #006699; } /* dark blue */
-.poi-icon.climbing i    { color: #e68a00; } /* orange */
-.poi-icon.karting i     { color: #4d4d4d; } /* dark gray */
-.poi-icon.escape i      { color: #e9e44b; } /*  */
-.poi-icon.bowling i     { color: #4d4d4d; } /* dark gray */
-.poi-icon.carousel i    { color: #c77cc4; } /*  */
-.poi-icon.train i       { color: #cc2900; } /* red */
-.poi-icon.scooter i     { color: #927fb3; } /*  */
-.poi-icon.water-park i  { color: #3a3a80; } /* dark blue */
-.poi-icon.zoo i         { color: #663300; } /* dark brown */
-.poi-icon.skydive i     { color: #6F8FAF; } /* denim blue */
-.poi-icon.skating i     { color: #0da9b8; } /* confident seas */
+/* =========================================
+   Category halo colors (map markers)
+   ========================================= */
+.poi-icon.mini-golf   .poi-halo { background: #5f7f6e; }  /* sage */
+.poi-icon.arcade      .poi-halo { background: #b46a4a; }  /* terracotta */
+.poi-icon.gaming      .poi-halo { background: #6a6f73; }  /* slate */
+.poi-icon.trampoline  .poi-halo { background: #7c8f7a; }  /* muted olive */
+.poi-icon.laser       .poi-halo { background: #4f8a8b; }  /* dusty teal */
+.poi-icon.indoor-play .poi-halo { background: #3f5f7a; }  /* denim */
+.poi-icon.climbing    .poi-halo { background: #c07a3d; }  /* burnt orange */
+.poi-icon.karting     .poi-halo { background: #6b4e3d; }  /* warm brown */
+.poi-icon.escape      .poi-halo { background: #b8a14f; }  /* muted mustard */
+.poi-icon.bowling     .poi-halo { background: #7a7f84; }  /* cool gray */
+.poi-icon.carousel    .poi-halo { background: #9b6fa3; }  /* dusty lavender */
+.poi-icon.train       .poi-halo { background: #a34f3d; }  /* muted red */
+.poi-icon.scooter     .poi-halo { background: #7d6aa5; }  /* soft violet */
+.poi-icon.water-park  .poi-halo { background: #2f6c8f; }  /* ocean */
+.poi-icon.zoo         .poi-halo { background: #6c5238; }  /* cocoa */
+.poi-icon.skydive     .poi-halo { background: #617c9a; }  /* steel blue */
+.poi-icon.skating     .poi-halo { background: #3f8c8f; }  /* cool teal */
 
 /* =========================================
-   Legend 
+   Legend
    ========================================= */
 .legend {
   padding: 10px 12px;
@@ -184,31 +188,27 @@ body {
   display: none;
 }
 
-/* =========================================
-   Mobile Setup 
-   ========================================= */
+/* Allow long category names to wrap */
+.legend-item {
+  align-items: flex-start;
+}
 
+.legend-item span:last-child {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Mobile legend */
 @media (max-width: 768px) {
   .legend {
     width: auto;
-    max-width: 82vw
+    max-width: 82vw;   /* FIXED: missing semicolon */
     max-height: 40vh;
     box-sizing: border-box;
     overflow-y: auto;
     font-size: 13px;
-  }
-}
-
-  /* allow long category names to wrap instead of expanding legend */
-  .legend-item {
-    align-items: flex-start;
-  }
-
-  .legend-item span:last-child {
-    flex: 1 1 auto;
-    min-width: 0;
-    overflow-wrap: anywhere;  /* wraps long words/names */
-    word-break: break-word;
   }
 }
 
@@ -222,6 +222,7 @@ body {
   transform: translate(-50%, -50%);
   border-radius: 50%;
   opacity: 0.15;
+  border: 1px solid rgba(0,0,0,0.05);
 }
 
 /* Legend glyph */
@@ -235,7 +236,29 @@ body {
 
 .legend-glyph i {
   font-size: 12px;
+  color: #2f2f2f; /* neutral charcoal */
 }
+
+/* =========================================
+   Category halo colors (legend)
+   ========================================= */
+.poi-icon.mini-golf   .legend-dot { background: #5f7f6e; }
+.poi-icon.arcade      .legend-dot { background: #b46a4a; }
+.poi-icon.gaming      .legend-dot { background: #6a6f73; }
+.poi-icon.trampoline  .legend-dot { background: #7c8f7a; }
+.poi-icon.laser       .legend-dot { background: #4f8a8b; }
+.poi-icon.indoor-play .legend-dot { background: #3f5f7a; }
+.poi-icon.climbing    .legend-dot { background: #c07a3d; }
+.poi-icon.karting     .legend-dot { background: #6b4e3d; }
+.poi-icon.escape      .legend-dot { background: #b8a14f; }
+.poi-icon.bowling     .legend-dot { background: #7a7f84; }
+.poi-icon.carousel    .legend-dot { background: #9b6fa3; }
+.poi-icon.train       .legend-dot { background: #a34f3d; }
+.poi-icon.scooter     .legend-dot { background: #7d6aa5; }
+.poi-icon.water-park  .legend-dot { background: #2f6c8f; }
+.poi-icon.zoo         .legend-dot { background: #6c5238; }
+.poi-icon.skydive     .legend-dot { background: #617c9a; }
+.poi-icon.skating     .legend-dot { background: #3f8c8f; }
 
 /* =========================================
    Hover tooltips (match legend style)
@@ -256,6 +279,10 @@ body {
 .leaflet-tooltip-right:before {
   border: none;
 }
+
+/* =========================================
+   Layers control styling
+   ========================================= */
 
 /* Styles the All/None buttons inside the Layers control */
 .layers-bulk {
@@ -295,4 +322,3 @@ body {
 .leaflet-control-layers input {
   margin-top: 0;
 }
-
