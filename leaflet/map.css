@@ -107,7 +107,7 @@ body {
   font-size: 16px;
   line-height: 1;
   color: #606060; /* soft graphite */  
-  opacity: 0.75; 
+  opacity: 0.70; 
 }
 
 /* =========================================
@@ -237,7 +237,7 @@ body {
 
 .legend-glyph i {
   font-size: 12px;
-  color: #4a4a4a;  
+  color: #606060;  
 }
 
 /* =========================================
