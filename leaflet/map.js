@@ -49,8 +49,8 @@
     var cluster = L.markerClusterGroup({
       showCoverageOnHover: false,
       spiderfyOnMaxZoom: true,
-      disableClusteringAtZoom: 16, // tweak: 15–17 typical
-      maxClusterRadius: 45         // tweak: smaller=tighter clusters
+      disableClusteringAtZoom: 15, // tweak: 15–17 typical
+      maxClusterRadius: 20        // tweak: smaller=tighter clusters
     });
     map.addLayer(cluster);
 
