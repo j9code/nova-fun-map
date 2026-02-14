@@ -313,6 +313,8 @@ body {
 .poi-icon.zoo         .legend-dot { background: #6c5238; }
 .poi-icon.skydive     .legend-dot { background: #617c9a; }
 .poi-icon.skating     .legend-dot { background: #3f8c8f; }
+.poi-icon.slide .legend-dot { background: #927fb3; }
+
 
 /* =========================================
    Hover tooltips (match legend style)
