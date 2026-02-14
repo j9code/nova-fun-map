@@ -1,4 +1,4 @@
-// @name Leafletfunmap_2.11.26
+// @name Leafletfunmap_query
 
 [out:json][timeout:180];
 
@@ -22,7 +22,7 @@
   nwr["leisure"~"^(miniature_golf|amusement_arcade|trampoline_park|escape_game|bowling_alley|indoor_play|water_park|gaming_lounge)$"](area.nova);
 
   // attraction-based categories
-  nwr["attraction"~"^(train|carousel|animal_scooter)$"](area.nova);
+  nwr["attraction"~"^(train|carousel|animal_scooter|slide)$"](area.nova);
 
   // tourism-based categories
   nwr["tourism"="zoo"](area.nova);
