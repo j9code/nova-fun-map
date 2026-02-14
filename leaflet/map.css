@@ -84,8 +84,8 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 20px;
-  height: 20px;
+  width: 19px;
+  height: 19px;
   transform: translate(-50%, -50%);
   border-radius: 50%;
   opacity: 0.28;
