@@ -99,6 +99,7 @@
       { name: "Mini Golf",          key: "mini-golf",   color: "#537f69", fa: '<i class="fa-solid fa-golf-ball-tee"></i>',  filter: function (f) { return f.properties && f.properties.leisure === "miniature_golf"; } },
       { name: "Miniature Trains",   key: "train",       color: "#cc2900", fa: '<i class="fa-solid fa-train"></i>',          filter: function (f) { return f.properties && f.properties.attraction === "train"; } },
       { name: "Skating Rinks",      key: "skating",     color: "#0da9b8", fa: '<i class="fa-solid fa-person-skating"></i>', filter: function (f) { return ((f.properties && f.properties.leisure === "ice_rink") || sportHas(f, "ice_skating") || sportHas(f, "roller_skating")); } },
+      { name: "Slides",             key: "slide",       color: "#927fb3", fa: '<i class="fa-solid fa-hill-rockslide"></i>', filter: function (f) { return ((f.properties && f.properties.attraction === "slide"; } },
       { name: "Trampoline Parks",   key: "trampoline",  color: "#a8a563", fa: '<i class="fa-solid fa-person-falling"></i>', filter: function (f) { return f.properties && f.properties.leisure === "trampoline_park"; } },
       { name: "Water Parks",        key: "water-park",  color: "#3a3a80", fa: '<i class="fa-solid fa-water"></i>',          filter: function (f) { return f.properties && f.properties.leisure === "water_park"; } }
     ];
