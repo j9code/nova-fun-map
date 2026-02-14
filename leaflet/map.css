@@ -130,6 +130,8 @@ body {
 .poi-icon.zoo         .poi-halo { background: #6c5238; }  /* cocoa */
 .poi-icon.skydive     .poi-halo { background: #617c9a; }  /* steel blue */
 .poi-icon.skating     .poi-halo { background: #3f8c8f; }  /* cool teal */
+.poi-icon.slide       .poi-halo { background: #927fb3; }  /*  */
+
 
 /* =========================================
    MarkerCluster styling (soft/airy)
