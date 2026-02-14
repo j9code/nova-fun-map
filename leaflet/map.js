@@ -50,7 +50,7 @@
       showCoverageOnHover: false,
       spiderfyOnMaxZoom: true,
       disableClusteringAtZoom: 15, // tweak: 15–17 typical
-      maxClusterRadius: 20        // tweak: smaller=tighter clusters
+      maxClusterRadius: 22        // tweak: smaller=tighter clusters
     });
     map.addLayer(cluster);
 
