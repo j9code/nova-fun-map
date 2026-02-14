@@ -1891,6 +1891,29 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -77.1095196,
+          38.84236
+        ]
+      },
+      "properties": {
+        "addr:city": "Alexandria",
+        "addr:housenumber": "4694",
+        "addr:postcode": "22302",
+        "addr:state": "VA",
+        "addr:street": "King Street",
+        "gaming_lounge": "video_games",
+        "leisure": "gaming_lounge",
+        "name": "XP League Alexandria",
+        "website": "https://www.xpleague.com/virginia-falls-church/",
+        "@id": "node/13563265526",
+        "@type": "node"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -77.3888534,
           39.0608013
         ]
