@@ -1914,6 +1914,51 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -77.1814341,
+          38.878834
+        ]
+      },
+      "properties": {
+        "addr:city": "Falls Church",
+        "addr:housenumber": "7201",
+        "addr:postcode": "22046",
+        "addr:state": "VA",
+        "addr:street": "Route 29",
+        "leisure": "escape_game",
+        "name": "Cyber Racoon Escape Game",
+        "website": "https://dcescaperoom.com/",
+        "@id": "node/13563321077",
+        "@type": "node"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.42773,
+          38.9951772
+        ]
+      },
+      "properties": {
+        "addr:city": "Sterling",
+        "addr:housenumber": "405",
+        "addr:postcode": "20164",
+        "addr:state": "VA",
+        "addr:street": "Glenn Drive",
+        "gaming_lounge": "video_games",
+        "leisure": "gaming_lounge",
+        "name": "Valhallan Esports Training",
+        "website": "https://arenas.valhallan.com/sterling-va-us/",
+        "@id": "node/13563346640",
+        "@type": "node"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -77.3888534,
           39.0608013
         ]
