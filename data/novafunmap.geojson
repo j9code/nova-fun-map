@@ -567,6 +567,23 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -77.4918418,
+          38.8812699
+        ]
+      },
+      "properties": {
+        "attraction": "slide",
+        "name": "Treetops Slide",
+        "playground": "slide",
+        "@id": "node/9238802534",
+        "@type": "node"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -77.1111985,
           38.7737707
         ]
@@ -3073,6 +3090,136 @@
         "operator": "Northern Virginia Regional Park Authority",
         "website": "https://www.novaparks.com/waterparks/pirates-cove-waterpark",
         "@id": "way/1361479356",
+        "@type": "way"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.4912853,
+          38.8807041
+        ]
+      },
+      "properties": {
+        "attraction": "slide",
+        "name": "Castle Slide",
+        "playground:theme": "castle",
+        "tourism": "attraction",
+        "@id": "way/1427581360",
+        "@type": "way"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.4912393,
+          38.880744
+        ]
+      },
+      "properties": {
+        "attraction": "slide",
+        "name": "Castle Slide",
+        "playground:theme": "castle",
+        "tourism": "attraction",
+        "@id": "way/1427581361",
+        "@type": "way"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.4922504,
+          38.8805973
+        ]
+      },
+      "properties": {
+        "attraction": "slide",
+        "name": "Dino Slide",
+        "tourism": "attraction",
+        "@id": "way/1427581362",
+        "@type": "way"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.4911704,
+          38.8832307
+        ]
+      },
+      "properties": {
+        "attraction": "slide",
+        "name": "Volcano Slide",
+        "playground": "slide",
+        "@id": "way/1427704215",
+        "@type": "way"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.8245423,
+          39.0953939
+        ]
+      },
+      "properties": {
+        "addr:city": "Bluemont",
+        "addr:state": "VA",
+        "attraction": "slide",
+        "name": "Mega Slide",
+        "operator": "Great Country Farms",
+        "website": "https://greatcountryfarms.com/attractions//",
+        "@id": "way/1445195661",
+        "@type": "way"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.8227041,
+          39.093818
+        ]
+      },
+      "properties": {
+        "addr:city": "Bluemont",
+        "addr:state": "VA",
+        "attraction": "slide",
+        "name": "Combine Slide",
+        "operator": "Great Country Farms",
+        "website": "https://greatcountryfarms.com/attractions//",
+        "@id": "way/1445225598",
+        "@type": "way"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.8224938,
+          39.0937037
+        ]
+      },
+      "properties": {
+        "addr:city": "Bluemont",
+        "addr:state": "VA",
+        "attraction": "slide",
+        "name": "Triple Threat Slide",
+        "operator": "Great Country Farms",
+        "website": "https://greatcountryfarms.com/attractions//",
+        "@id": "way/1445225600",
         "@type": "way"
       }
     },
