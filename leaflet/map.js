@@ -17,13 +17,12 @@
 
     // 1) Map
     var map = L.map('map', {
-      zoomControl:false
+      zoomControl: false
     }).setView([38.95, -77.35], 10);
 
     L.control.zoom({
       position: 'bottomleft'
     }).addTo(map);
-
 
     // 2) Basemaps
     var cartoLight = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
@@ -37,7 +36,8 @@
       subdomains: 'abcd',
       maxZoom: 20
     });
-/*
+
+    /*
     var cartoDark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
       attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
       subdomains: 'abcd',
@@ -48,7 +48,8 @@
       'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
       { attribution: 'Tiles &copy; Esri', maxZoom: 19 }
     );
-*/
+    */
+
     var baseMaps = {
       "Light": cartoLight,
       "Voyager": cartoVoyager
@@ -58,13 +59,17 @@
 
     // 3) Helpers
 
-    function makeMarkerIcon(categoryClass, faHtml, color) {
+    // NOTE: neutral gray
+    // - No inline styles for color
+    // - CSS controls halo color (.poi-halo) and legend dot (.legend-dot)
+    // - Glyph stays charcoal via CSS
+    function makeMarkerIcon(categoryClass, faHtml) {
       return L.divIcon({
         className: 'leaflet-div-icon poi-icon ' + categoryClass,
         html:
           '<div class="poi-marker">' +
-            '<span class="poi-halo" style="background:' + color + '"></span>' +
-            '<span class="poi-fa" style="color:' + color + '">' + faHtml + '</span>' +
+            '<span class="poi-halo"></span>' +
+            '<span class="poi-fa">' + faHtml + '</span>' +
           '</div>',
         iconSize: [18, 18],
         iconAnchor: [9, 9],
@@ -85,28 +90,29 @@
     }
 
     // 4) Categories
+    // (You can keep color values if you want, but they are no longer used for styling.)
     var categories = [
-      { name: "Animal Scooters",    key: "scooter",     color: "#927fb3", fa: '<i class="fa-solid fa-dragon"></i>',               filter: function (f) { return f.properties && f.properties.attraction === "animal_scooter"; } },
-      { name: "Amusement Centers",  key: "arcade",      color: "#d57345", fa: '<i class="fa-solid fa-face-smile"></i>',         filter: function (f) { return f.properties && f.properties.leisure === "amusement_arcade"; } },
-      { name: "Animal Parks",       key: "zoo",         color: "#663300", fa: '<i class="fa-solid fa-paw"></i>',                  filter: function (f) { return f.properties && f.properties.tourism === "zoo"; } },
-      { name: "Bowling",            key: "bowling",     color: "#4d4d4d", fa: '<i class="fa-solid fa-bowling-ball"></i>',        filter: function (f) { return ((f.properties && f.properties.leisure === "bowling_alley") || sportHas(f, "10pin")); } },
-      { name: "Carousels",          key: "carousel",    color: "#c77cc4", fa: '<i class="fa-solid fa-horse-head"></i>',           filter: function (f) { return f.properties && f.properties.attraction === "carousel"; } },
-      { name: "Climbing Parks",     key: "climbing",    color: "#e68a00", fa: '<i class="fa-solid fa-person-walking"></i>',      filter: function (f) { return sportHas(f, "climbing_adventure"); } },
-      { name: "Escape Rooms",       key: "escape",      color: "#e9e44b", fa: '<i class="fa-solid fa-puzzle-piece"></i>',        filter: function (f) { return f.properties && f.properties.leisure === "escape_game"; } },
-      { name: "Gaming Lounge",      key: "gaming",      color: "#4d4d4d", fa: '<i class="fa-solid fa-gamepad"></i>',             filter: function (f) { return f.properties && f.properties.leisure === "gaming_lounge"; } },
-      { name: "Go Karts",           key: "karting",     color: "#4d4d4d", fa: '<i class="fa-solid fa-flag-checkered"></i>',      filter: function (f) { return sportHas(f, "karting"); } },
-      { name: "Indoor Playgrounds", key: "indoor-play", color: "#006699", fa: '<i class="fa-solid fa-child-reaching"></i>',      filter: function (f) { return f.properties && f.properties.leisure === "indoor_play"; } },
-      { name: "Indoor Sky Diving",  key: "skydive",     color: "#6F8FAF", fa: '<i class="fa-solid fa-wind"></i>',                filter: function (f) { return sportHas(f, "indoor_skydiving"); } },
-      { name: "Laser Tag",          key: "laser",       color: "#6acc99", fa: '<i class="fa-solid fa-bullseye"></i>',            filter: function (f) { return sportHas(f, "laser_tag"); } },
-      { name: "Mini Golf",          key: "mini-golf",   color: "#537f69", fa: '<i class="fa-solid fa-golf-ball-tee"></i>',       filter: function (f) { return f.properties && f.properties.leisure === "miniature_golf"; } },
-      { name: "Miniature Trains",   key: "train",       color: "#cc2900", fa: '<i class="fa-solid fa-train"></i>',                filter: function (f) { return f.properties && f.properties.attraction === "train"; } },
-      { name: "Skating Rinks",      key: "skating",     color: "#0da9b8", fa: '<i class="fa-solid fa-person-skating"></i>',      filter: function (f) { return ((f.properties && f.properties.leisure === "ice_rink") || sportHas(f, "ice_skating") || sportHas(f, "roller_skating")); } },
-      { name: "Trampoline Parks",   key: "trampoline",  color: "#a8a563", fa: '<i class="fa-solid fa-person-falling"></i>',      filter: function (f) { return f.properties && f.properties.leisure === "trampoline_park"; } },
-      { name: "Water Parks",        key: "water-park",  color: "#3a3a80", fa: '<i class="fa-solid fa-water"></i>',                filter: function (f) { return f.properties && f.properties.leisure === "water_park"; } }
+      { name: "Animal Scooters",    key: "scooter",     color: "#927fb3", fa: '<i class="fa-solid fa-dragon"></i>',          filter: function (f) { return f.properties && f.properties.attraction === "animal_scooter"; } },
+      { name: "Amusement Centers",  key: "arcade",      color: "#d57345", fa: '<i class="fa-solid fa-face-smile"></i>',     filter: function (f) { return f.properties && f.properties.leisure === "amusement_arcade"; } },
+      { name: "Animal Parks",       key: "zoo",         color: "#663300", fa: '<i class="fa-solid fa-paw"></i>',            filter: function (f) { return f.properties && f.properties.tourism === "zoo"; } },
+      { name: "Bowling",            key: "bowling",     color: "#4d4d4d", fa: '<i class="fa-solid fa-bowling-ball"></i>',   filter: function (f) { return ((f.properties && f.properties.leisure === "bowling_alley") || sportHas(f, "10pin")); } },
+      { name: "Carousels",          key: "carousel",    color: "#c77cc4", fa: '<i class="fa-solid fa-horse-head"></i>',     filter: function (f) { return f.properties && f.properties.attraction === "carousel"; } },
+      { name: "Climbing Parks",     key: "climbing",    color: "#e68a00", fa: '<i class="fa-solid fa-person-walking"></i>', filter: function (f) { return sportHas(f, "climbing_adventure"); } },
+      { name: "Escape Rooms",       key: "escape",      color: "#e9e44b", fa: '<i class="fa-solid fa-puzzle-piece"></i>',   filter: function (f) { return f.properties && f.properties.leisure === "escape_game"; } },
+      { name: "Gaming Lounge",      key: "gaming",      color: "#4d4d4d", fa: '<i class="fa-solid fa-gamepad"></i>',        filter: function (f) { return f.properties && f.properties.leisure === "gaming_lounge"; } },
+      { name: "Go Karts",           key: "karting",     color: "#4d4d4d", fa: '<i class="fa-solid fa-flag-checkered"></i>', filter: function (f) { return sportHas(f, "karting"); } },
+      { name: "Indoor Playgrounds", key: "indoor-play", color: "#006699", fa: '<i class="fa-solid fa-child-reaching"></i>', filter: function (f) { return f.properties && f.properties.leisure === "indoor_play"; } },
+      { name: "Indoor Sky Diving",  key: "skydive",     color: "#6F8FAF", fa: '<i class="fa-solid fa-wind"></i>',           filter: function (f) { return sportHas(f, "indoor_skydiving"); } },
+      { name: "Laser Tag",          key: "laser",       color: "#6acc99", fa: '<i class="fa-solid fa-bullseye"></i>',       filter: function (f) { return sportHas(f, "laser_tag"); } },
+      { name: "Mini Golf",          key: "mini-golf",   color: "#537f69", fa: '<i class="fa-solid fa-golf-ball-tee"></i>',  filter: function (f) { return f.properties && f.properties.leisure === "miniature_golf"; } },
+      { name: "Miniature Trains",   key: "train",       color: "#cc2900", fa: '<i class="fa-solid fa-train"></i>',          filter: function (f) { return f.properties && f.properties.attraction === "train"; } },
+      { name: "Skating Rinks",      key: "skating",     color: "#0da9b8", fa: '<i class="fa-solid fa-person-skating"></i>', filter: function (f) { return ((f.properties && f.properties.leisure === "ice_rink") || sportHas(f, "ice_skating") || sportHas(f, "roller_skating")); } },
+      { name: "Trampoline Parks",   key: "trampoline",  color: "#a8a563", fa: '<i class="fa-solid fa-person-falling"></i>', filter: function (f) { return f.properties && f.properties.leisure === "trampoline_park"; } },
+      { name: "Water Parks",        key: "water-park",  color: "#3a3a80", fa: '<i class="fa-solid fa-water"></i>',          filter: function (f) { return f.properties && f.properties.leisure === "water_park"; } }
     ];
 
     for (var c = 0; c < categories.length; c++) {
-      categories[c].markerIcon = makeMarkerIcon(categories[c].key, categories[c].fa, categories[c].color);
+      categories[c].markerIcon = makeMarkerIcon(categories[c].key, categories[c].fa);
     }
 
     // 5) Legend
@@ -120,9 +126,10 @@
         var cat = categories[i];
         itemsHtml +=
           '<div class="legend-item">' +
-            '<span class="legend-swatch">' +
-              '<span class="legend-dot" style="background:' + cat.color + '"></span>' +
-              '<span class="legend-glyph" style="color:' + cat.color + '">' + cat.fa + '</span>' +
+            // IMPORTANT: add poi-icon + category key so CSS can apply halo colors
+            '<span class="legend-swatch poi-icon ' + cat.key + '">' +
+              '<span class="legend-dot"></span>' +
+              '<span class="legend-glyph">' + cat.fa + '</span>' +
             '</span>' +
             '<span>' + cat.name + '</span>' +
           '</div>';
