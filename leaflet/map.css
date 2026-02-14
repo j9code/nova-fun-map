@@ -106,7 +106,8 @@ body {
 .poi-fa i {
   font-size: 16px;
   line-height: 1;
-  color: #4a4a4a; /* soft graphite */  
+  color: #606060; /* soft graphite */  
+  opacity: 0.75; 
 }
 
 /* =========================================
