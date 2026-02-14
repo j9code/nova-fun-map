@@ -1,4 +1,4 @@
-// PlayNoVA — map.js (ES5 safe)
+// PlayNoVA — map.js (ES5 safe) — CLUSTERING BY LOCATION (shared clusters, category toggles)
 
 (function () {
   window.addEventListener('load', function () {
@@ -6,6 +6,11 @@
       console.error("Leaflet (L) is not available. Check leaflet.js script loading.");
       return;
     }
+
+    // Requires:
+    //  - leaflet.markercluster
+    //  - leaflet.featuregroup.subgroup
+    // If missing, you’ll see errors like L.markerClusterGroup is not a function.
 
     var isMobile = window.matchMedia && window.matchMedia("(max-width: 768px)").matches;
 
@@ -16,13 +21,9 @@
     }
 
     // 1) Map
-    var map = L.map('map', {
-      zoomControl: false
-    }).setView([38.95, -77.35], 10);
+    var map = L.map('map', { zoomControl: false }).setView([38.95, -77.35], 10);
 
-    L.control.zoom({
-      position: 'bottomleft'
-    }).addTo(map);
+    L.control.zoom({ position: 'bottomleft' }).addTo(map);
 
     // 2) Basemaps
     var cartoLight = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
@@ -37,19 +38,6 @@
       maxZoom: 20
     });
 
-    /*
-    var cartoDark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
-      subdomains: 'abcd',
-      maxZoom: 20
-    });
-
-    var esriImagery = L.tileLayer(
-      'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-      { attribution: 'Tiles &copy; Esri', maxZoom: 19 }
-    );
-    */
-
     var baseMaps = {
       "Light": cartoLight,
       "Voyager": cartoVoyager
@@ -57,12 +45,17 @@
 
     cartoLight.addTo(map);
 
-    // 3) Helpers
+    // 3) Shared cluster group (ALL categories cluster together by LOCATION)
+    var cluster = L.markerClusterGroup({
+      showCoverageOnHover: false,
+      spiderfyOnMaxZoom: true,
+      disableClusteringAtZoom: 16, // tweak: 15–17 typical
+      maxClusterRadius: 45         // tweak: smaller=tighter clusters
+    });
+    map.addLayer(cluster);
 
-    // NOTE: neutral gray
-    // - No inline styles for color
-    // - CSS controls halo color (.poi-halo) and legend dot (.legend-dot)
-    // - Glyph stays charcoal via CSS
+    // 4) Helpers
+    // NOTE: neutral gray styling controlled by CSS (poi-halo, legend-dot, glyph color)
     function makeMarkerIcon(categoryClass, faHtml) {
       return L.divIcon({
         className: 'leaflet-div-icon poi-icon ' + categoryClass,
@@ -89,8 +82,7 @@
       return txt.indexOf(val) !== -1;
     }
 
-    // 4) Categories
-    // (You can keep color values if you want, but they are no longer used for styling.)
+    // 5) Categories
     var categories = [
       { name: "Animal Scooters",    key: "scooter",     color: "#927fb3", fa: '<i class="fa-solid fa-dragon"></i>',          filter: function (f) { return f.properties && f.properties.attraction === "animal_scooter"; } },
       { name: "Amusement Centers",  key: "arcade",      color: "#d57345", fa: '<i class="fa-solid fa-face-smile"></i>',     filter: function (f) { return f.properties && f.properties.leisure === "amusement_arcade"; } },
@@ -115,7 +107,7 @@
       categories[c].markerIcon = makeMarkerIcon(categories[c].key, categories[c].fa);
     }
 
-    // 5) Legend
+    // 6) Legend (unchanged)
     var legend = L.control({ position: isMobile ? "topleft" : "topleft" });
 
     legend.onAdd = function () {
@@ -126,7 +118,6 @@
         var cat = categories[i];
         itemsHtml +=
           '<div class="legend-item">' +
-            // IMPORTANT: add poi-icon + category key so CSS can apply halo colors
             '<span class="legend-swatch poi-icon ' + cat.key + '">' +
               '<span class="legend-dot"></span>' +
               '<span class="legend-glyph">' + cat.fa + '</span>' +
@@ -162,7 +153,7 @@
 
     legend.addTo(map);
 
-    // 6) Layers control — always visible
+    // 7) Layers control — always visible
     var overlays = {};
     var overlayList = [];
     var layersControl = L.control.layers(baseMaps, overlays, { collapsed: isMobile }).addTo(map);
@@ -215,7 +206,7 @@
 
     addAllNoneButtonsInsideLayersControl();
 
-    // 7) Load GeoJSON + add overlays
+    // 8) Load GeoJSON + build clustered overlays (SUBGROUPS)
     var geojsonUrl = 'data/novafunmap.geojson';
 
     fetch(geojsonUrl)
@@ -226,6 +217,10 @@
       .then(function (data) {
         for (var k = 0; k < categories.length; k++) {
           (function (cat) {
+
+            // Each category is a subgroup INSIDE the shared cluster
+            var subgroup = L.featureGroup.subGroup(cluster);
+
             var gjLayer = L.geoJSON(data, {
               filter: cat.filter,
               pointToLayer: function (feature, latlng) {
@@ -248,10 +243,8 @@
                   websiteLine = '<a href="' + website + '" target="_blank" rel="noopener noreferrer">Website</a>';
                 }
 
-                // Click popup
                 lyr.bindPopup("<strong>" + name + "</strong><br>" + locationLine + websiteLine);
 
-                // Desktop-only hover tooltip (mobile has no hover; tooltips look glitchy)
                 if (!isMobile) {
                   var tooltipHtml = "<strong>" + name + "</strong>";
                   if (city || state) {
@@ -263,7 +256,6 @@
                     opacity: 0.95
                   });
                 } else {
-                  // If any tooltip sneaks in, close it when the popup opens
                   lyr.on("popupopen", function () {
                     if (lyr.closeTooltip) lyr.closeTooltip();
                   });
@@ -271,9 +263,14 @@
               }
             });
 
-            overlays[cat.name] = gjLayer;
-            layersControl.addOverlay(gjLayer, cat.name);
-            overlayList.push(gjLayer);
+            // Put this category’s markers into the subgroup
+            subgroup.addLayer(gjLayer);
+
+            // IMPORTANT: the overlay you toggle is the subgroup (so it participates in shared clustering)
+            overlays[cat.name] = subgroup;
+            layersControl.addOverlay(subgroup, cat.name);
+            overlayList.push(subgroup);
+
           })(categories[k]);
         }
 
@@ -281,7 +278,7 @@
         refreshLayersControlUI();
 
         // Optional: start with ALL categories enabled.
-        // Comment this out if you want them initially OFF.
+        // Uncomment to start ON.
         /*
         for (var i = 0; i < overlayList.length; i++) {
           map.addLayer(overlayList[i]);
