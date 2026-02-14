@@ -49,7 +49,7 @@ See `docs/admin-areas.md` for details.
 - In progress.
 
 ## Files
-- `/data/` – OSM Overpass query
+- `/data/` – OSM Overpass query results
 - `/methods` – step-by-step documentation
 
 ## License
