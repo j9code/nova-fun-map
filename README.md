@@ -3,7 +3,6 @@ Mapping amusements, attractions, and family-friendly fun across Northern Virgini
 
 <a href="https://j9code.github.io/nova-fun-map">NoVa Fun Map</a>
 
-![PlayNoVA Map Screenshot](images/PlayNoVA.jpg)
 
 
 ## Overview
