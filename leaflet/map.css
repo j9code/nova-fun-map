@@ -109,14 +109,14 @@ body {
 
 /* Optional CSS-driven colors (JS inline styles win) */
 .poi-icon.mini-golf i   { color: #537f69; } /* green */
-.poi-icon.arcade i      { color: #f5be58; } /* Fizzy Peach */
+.poi-icon.arcade i      { color: #d57345; } /*  */
 .poi-icon.gaming i      { color: #4d4d4d; } /* purple */
 .poi-icon.trampoline i  { color: #a8a563; } /* teal */
 .poi-icon.laser i       { color: #6acc99; } /*  */
 .poi-icon.indoor-play i { color: #006699; } /* dark blue */
 .poi-icon.climbing i    { color: #e68a00; } /* orange */
 .poi-icon.karting i     { color: #4d4d4d; } /* dark gray */
-.poi-icon.escape i      { color: #73d4cd; } /*  */
+.poi-icon.escape i      { color: #63b8b2; } /*  */
 .poi-icon.bowling i     { color: #4d4d4d; } /* dark gray */
 .poi-icon.carousel i    { color: #c77cc4; } /*  */
 .poi-icon.train i       { color: #cc2900; } /* red */
