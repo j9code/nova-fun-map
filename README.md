@@ -1,5 +1,5 @@
 ## Project: NoVa Fun Map
-Mapping amusements, attractions, and family-friendly fun across Northern Virginia using OpenStreetMap data, Overpass API, and Leaflet. Many thanks to M. Wildon for sharing the <a href="https://github.com/watmildon/microcosm">microcosm<a/> template for fetching the data . 
+Mapping amusements, attractions, and family-friendly fun across Northern Virginia using OpenStreetMap data, Overpass API, and Leaflet. Many thanks to M. Wildon for sharing the <a href="https://github.com/watmildon/microcosm">microcosm<a/> template for fetching the data. 
 
 ### Current Contribution Status: 
 When I started this project, the defined Northern Virginia footprint contained 102 mapped “fun” points of interest (45 nodes and 57 ways). Since then, I’ve grown the dataset to 139 features (85 nodes and 54 ways), a net increase of 37 features—about 36% growth. I added many of the new POIs and reviewed, corrected, and standardized tagging on existing features where needed. I’ve edited 111 of the 139 current features (about 80%).
