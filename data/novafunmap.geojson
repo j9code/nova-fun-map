@@ -2288,25 +2288,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -77.3627149,
-          38.6605873
-        ]
-      },
-      "properties": {
-        "building": "yes",
-        "leisure": "sports_centre",
-        "name": "Prince William Ice Center",
-        "sport": "ice_hockey;ice_skating",
-        "website": "https://www.pwice.com/",
-        "@id": "way/95048277",
-        "@type": "way"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -77.305926,
           38.7622937
         ]
@@ -2538,35 +2519,6 @@
         "name": "Chuck E. Cheese",
         "website": "https://locations.chuckecheese.com/us/va/alexandria/6301-richmond-hwy.",
         "@id": "way/208264045",
-        "@type": "way"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -77.0634771,
-          38.7742797
-        ]
-      },
-      "properties": {
-        "addr:city": "Alexandria",
-        "addr:housenumber": "2017",
-        "addr:postcode": "22307",
-        "addr:state": "VA",
-        "addr:street": "Belle View Boulevard",
-        "building": "commercial",
-        "ele": "6",
-        "fee": "yes",
-        "gnis:feature_id": "1491800",
-        "leisure": "sports_centre",
-        "name": "Mount Vernon Rec Center",
-        "opening_hours": "Mo-Fr 07:00-19:00; Sa 07:00-18:00; Su 08:00-18:00",
-        "source": "USGS Geonames",
-        "sport": "multi;swimming;ice_hockey;ice_skating;climbing",
-        "website": "https://www.fairfaxcounty.gov/parks/reccenter/mount-vernon",
-        "@id": "way/228620206",
         "@type": "way"
       }
     },
