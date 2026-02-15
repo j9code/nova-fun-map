@@ -9,6 +9,8 @@ When I started this project, the defined Northern Virginia footprint contained 1
 ![PlayNoVA map screenshot](images/PlayNoVA.png)
 
 
+
+*Work in Progress*
 ### Overview
 This project demonstrates how to create and share an interactive map using OpenStreetMap data, with documented data sourcing, tagging decisions, and cartographic choices.  
 It brings together:
