@@ -1725,6 +1725,8 @@
         ]
       },
       "properties": {
+        "addr:city": "Fairfax",
+        "addr:state": "VA",
         "arcade_game": "skeeball;driving;shooting",
         "leisure": "amusement_arcade",
         "name": "Corner Pocket",
