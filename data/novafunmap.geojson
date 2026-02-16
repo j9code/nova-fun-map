@@ -567,6 +567,25 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -77.4913,
+          38.8825164
+        ]
+      },
+      "properties": {
+        "attraction": "slide",
+        "name": "Cox Mountain Slide",
+        "operator": "Cox Farms",
+        "tourism": "attraction",
+        "website": "https://coxfarmsva.com",
+        "@id": "node/9238802533",
+        "@type": "node"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -77.4918418,
           38.8812699
         ]
@@ -574,7 +593,9 @@
       "properties": {
         "attraction": "slide",
         "name": "Treetops Slide",
+        "operator": "Cox Farms",
         "playground": "slide",
+        "website": "https://coxfarmsva.com",
         "@id": "node/9238802534",
         "@type": "node"
       }
@@ -990,30 +1011,6 @@
         "name": "Bond's Escape Room",
         "website": "https://bondsescaperoom.com",
         "@id": "node/13368584226",
-        "@type": "node"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -77.4608217,
-          39.0626864
-        ]
-      },
-      "properties": {
-        "addr:city": "Ashburn",
-        "addr:housenumber": "20051",
-        "addr:postcode": "20147",
-        "addr:state": "VA",
-        "addr:street": "Riverside Commons Plaza",
-        "addr:unit": "136",
-        "leisure": "sports_centre",
-        "name": "Up! Ultimate Adventure Park",
-        "sport": "climbing_adventure;obstacle_course;slick_slide",
-        "website": "https://www.upultimateadventurepark.com",
-        "@id": "node/13368617254",
         "@type": "node"
       }
     },
@@ -2010,6 +2007,7 @@
         "leisure": "sports_centre",
         "name": "Skatequest Ice Rinks",
         "sport": "ice_skating",
+        "website": "https://www.skatequest.com/",
         "@id": "way/44622489",
         "@type": "way"
       }
@@ -2568,34 +2566,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -77.2724088,
-          38.8486798
-        ]
-      },
-      "properties": {
-        "addr:city": "Fairfax",
-        "addr:housenumber": "3779",
-        "addr:postcode": "22031",
-        "addr:state": "VA",
-        "addr:street": "Pickett Road",
-        "building": "yes",
-        "ele": "125",
-        "gnis:feature_id": "1491874",
-        "leisure": "ice_rink",
-        "name": "Fairfax Ice Arena",
-        "seasonal": "no",
-        "source": "Bing;USGS Geonames",
-        "sport": "ice_skating;ice_hockey",
-        "website": "https://www.fairfaxicearena.com/",
-        "@id": "way/233086804",
-        "@type": "way"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -77.4785593,
           38.8025987
         ]
@@ -2810,35 +2780,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -77.1101546,
-          38.8787884
-        ]
-      },
-      "properties": {
-        "addr:city": "Arlington",
-        "addr:housenumber": "627",
-        "addr:postcode": "22203",
-        "addr:state": "VA",
-        "addr:street": "North Glebe Road",
-        "addr:unit": "800",
-        "building:levels": "8",
-        "building:part": "yes",
-        "leisure": "ice_rink",
-        "level": "7",
-        "name": "MedStar Capitals Iceplex",
-        "phone": "+1 571-224-0555",
-        "seasonal": "no",
-        "sport": "ice_skating;ice_hockey",
-        "website": "https://www.medstarcapitalsiceplex.com/",
-        "@id": "way/597976244",
-        "@type": "way"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -77.5650062,
           39.0854517
         ]
@@ -2979,27 +2920,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -77.707508,
-          39.3182592
-        ]
-      },
-      "properties": {
-        "addr:city": "Purcellville",
-        "addr:state": "VA",
-        "leisure": "sports_centre",
-        "name": "Harpers Ferry Adventure Center",
-        "operator": "Harpers Ferry Adventure Center",
-        "sport": "climbing_adventure;zipline",
-        "website": "https://harpersferryadventurecenter.com/",
-        "@id": "way/1318854277",
-        "@type": "way"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -77.2982674,
           38.6426457
         ]
@@ -3057,8 +2977,10 @@
       "properties": {
         "attraction": "slide",
         "name": "Castle Slide",
+        "operator": "Cox Farms",
         "playground:theme": "castle",
         "tourism": "attraction",
+        "website": "https://coxfarmsva.com",
         "@id": "way/1427581360",
         "@type": "way"
       }
@@ -3075,8 +2997,10 @@
       "properties": {
         "attraction": "slide",
         "name": "Castle Slide",
+        "operator": "Cox Farms",
         "playground:theme": "castle",
         "tourism": "attraction",
+        "website": "https://coxfarmsva.com",
         "@id": "way/1427581361",
         "@type": "way"
       }
@@ -3093,7 +3017,9 @@
       "properties": {
         "attraction": "slide",
         "name": "Dino Slide",
+        "operator": "Cox Farms",
         "tourism": "attraction",
+        "website": "https://coxfarmsva.com",
         "@id": "way/1427581362",
         "@type": "way"
       }
@@ -3110,7 +3036,8 @@
       "properties": {
         "attraction": "slide",
         "name": "Volcano Slide",
-        "playground": "slide",
+        "operator": "Cox Farms",
+        "website": "https://coxfarmsva.com",
         "@id": "way/1427704215",
         "@type": "way"
       }
