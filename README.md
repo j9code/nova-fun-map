@@ -47,7 +47,7 @@ The following OSM admin areas are used:
 - **City of Manassas**
 - **City of Manassas Park**
 
-These boundaries are referenced directly in the Overpass queries using their administrative levels.
+These boundaries are referenced directly in the Overpass queries using their relation IDs.
 See `docs/admin-areas.md` for details.
 
 ### How to Use This Repository
