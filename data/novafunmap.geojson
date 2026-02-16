@@ -3044,6 +3044,7 @@
         ]
       },
       "properties": {
+        "addr:city": "Centerville",
         "addr:state": "VA",
         "attraction": "slide",
         "name": "Volcano Slide",
