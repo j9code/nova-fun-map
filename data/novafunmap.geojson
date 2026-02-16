@@ -567,28 +567,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -77.4910222,
-          38.8831787
-        ]
-      },
-      "properties": {
-        "addr:city": "Centerville",
-        "addr:state": "VA",
-        "attraction": "slide",
-        "name": "Volcano Slide",
-        "operator": "Cox Farms",
-        "playground:theme": "volcano",
-        "tourism": "attraction",
-        "website": "https://coxfarmsva.com",
-        "@id": "node/9238802532",
-        "@type": "node"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -77.4913,
           38.8825164
         ]
@@ -3002,6 +2980,7 @@
       },
       "properties": {
         "addr:city": "Centerville",
+        "addr:state": "VA",
         "attraction": "slide",
         "name": "Castle Slide",
         "operator": "Cox Farms",
@@ -3023,6 +3002,7 @@
       },
       "properties": {
         "addr:city": "Centerville",
+        "addr:state": "VA",
         "attraction": "slide",
         "name": "Castle Slide",
         "operator": "Cox Farms",
@@ -3059,14 +3039,16 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -77.4911704,
-          38.8832307
+          -77.4911785,
+          38.8832168
         ]
       },
       "properties": {
+        "addr:state": "VA",
         "attraction": "slide",
         "name": "Volcano Slide",
         "operator": "Cox Farms",
+        "tourism": "attraction",
         "website": "https://coxfarmsva.com",
         "@id": "way/1427704215",
         "@type": "way"
