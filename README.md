@@ -10,6 +10,7 @@ When I started this project, the defined Northern Virginia footprint contained 1
 
 
 
+
 *Work in Progress*
 ### Overview
 This project demonstrates how to create and share an interactive map using OpenStreetMap data, with documented data sourcing, tagging decisions, and cartographic choices.  
@@ -30,22 +31,19 @@ The project currently focuses on:
 
 Each category has its own Overpass query and Leaflet layer.
 
-### Administrative Boundaries
-The project uses **OpenStreetMap administrative areas** to define the Northern Virginia region, rather than a custom bounding box. This ensures the map aligns with officially recognized county and city boundaries and avoids accidental inclusion of DC or Maryland nodes, ways, or relations.
+### Relation IDs for Locations
+The project uses **OpenStreetMap relation IDs** to define the Northern Virginia region, rather than a custom bounding box. This ensures the map aligns with officially recognized county and city boundaries and avoids accidental inclusion of nodes, ways, or relations in other States including Maryland, West Virginia, and the District of Columbia.
 
-The following OSM admin areas are used:
-
-- **Arlington County**
-- **Fairfax County**
-- **Fauquier County**
-- **Loudoun County**
-- **Prince William County**
-
-- **City of Alexandria**
-- **City of Fairfax**
-- **City of Falls Church**
-- **City of Manassas**
-- **City of Manassas Park**
+  rel(962190);   // Arlington County
+  rel(945043);   // Fairfax County
+  rel(1149984);  // Prince William County
+  rel(944948);   // Loudoun County
+  rel(1633326);  // Fauquier County
+  rel(206642);   // Falls Church, VA
+  rel(206637);   // Alexandria, VA
+  rel(206874);   // Fairfax City, VA
+  rel(206870);   // Manassas, VA
+  rel(206609);   // Manassas Park, VA  
 
 These boundaries are referenced directly in the Overpass queries using their relation IDs.
 See `docs/admin-areas.md` for details.
