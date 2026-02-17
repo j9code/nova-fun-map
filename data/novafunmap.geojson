@@ -3188,8 +3188,12 @@
         ]
       },
       "properties": {
+        "addr:city": "Bluemont",
+        "addr:state": "VA",
         "attraction": "amusement_ride",
         "name": "Roller Racers",
+        "operator": "Great Country Farms",
+        "website": "https://greatcountryfarms.com/attractions//",
         "@id": "way/1445231504",
         "@type": "way"
       }
