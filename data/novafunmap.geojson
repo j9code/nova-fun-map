@@ -906,9 +906,34 @@
         ]
       },
       "properties": {
+        "addr:city": "Bluemont",
+        "addr:state": "VA",
         "attraction": "amusement_ride",
         "name": "Wagon Ride",
+        "operator": "Great Country Farms",
+        "website": "https://greatcountryfarms.com/attractions//",
         "@id": "node/13260116664",
+        "@type": "node"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.8241877,
+          39.0952573
+        ]
+      },
+      "properties": {
+        "addr:city": "Bluemont",
+        "addr:state": "VA",
+        "attraction": "train",
+        "name": "Cow Train",
+        "operator": "Great Country Farms",
+        "tourism": "attraction",
+        "website": "https://greatcountryfarms.com/attractions//",
+        "@id": "node/13283736149",
         "@type": "node"
       }
     },
