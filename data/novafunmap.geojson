@@ -901,6 +901,22 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -77.8248462,
+          39.0954725
+        ]
+      },
+      "properties": {
+        "attraction": "amusement_ride",
+        "name": "Wagon Ride",
+        "@id": "node/13260116664",
+        "@type": "node"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -77.4234891,
           39.0319397
         ]
@@ -1218,7 +1234,7 @@
         "addr:housenumber": "11750",
         "addr:state": "VA",
         "addr:street": "Fair Oaks Mall",
-        "attraction": "animal_scooter",
+        "attraction": "amusement_ride",
         "description": "Electric Animal Scooters",
         "indoor": "yes",
         "name": "Fluffy Rides",
@@ -1241,7 +1257,7 @@
         "addr:city": "Manassas",
         "addr:state": "VA",
         "addr:street": "Sudley Road",
-        "attraction": "animal_scooter",
+        "attraction": "amusement_ride",
         "indoor": "yes",
         "name": "Fluffy Rides",
         "tourism": "attraction",
@@ -1971,6 +1987,26 @@
         "name": "Valhallan Esports Training",
         "website": "https://arenas.valhallan.com/sterling-va-us/",
         "@id": "node/13563346640",
+        "@type": "node"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.4224675,
+          39.0313162
+        ]
+      },
+      "properties": {
+        "addr:city": "Dulles",
+        "addr:state": "VA",
+        "attraction": "amusement_ride",
+        "indoor": "yes",
+        "name": "Fun House LED Motorcycles",
+        "website": "https://www.shopdullestowncenter.com/store/fun-house-led-motorcycles",
+        "@id": "node/13571508362",
         "@type": "node"
       }
     },
@@ -3114,6 +3150,22 @@
         "operator": "Great Country Farms",
         "website": "https://greatcountryfarms.com/attractions//",
         "@id": "way/1445225600",
+        "@type": "way"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.8234951,
+          39.094088
+        ]
+      },
+      "properties": {
+        "attraction": "amusement_ride",
+        "name": "Roller Racers",
+        "@id": "way/1445231504",
         "@type": "way"
       }
     },
